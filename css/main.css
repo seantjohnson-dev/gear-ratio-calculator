@@ -1,0 +1,67 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  color: #000;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  width: 80%;
+  margin: 20px auto 0;
+  overflow: hidden;
+  max-width: 800px;
+}
+fieldset {
+  padding: 0 10px 20px;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  min-width: 170px;
+}
+legend {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.field-wrapper {
+  overflow: hidden;
+  padding: 5px 0;
+}
+.field-wrapper:first-child {
+  padding-top: 0;
+}
+.field-wrapper:last-child {
+  padding-bottom: 0;
+}
+.field-wrapper input, .field-wrapper select {
+  width: 100%;
+  display: block;
+  border: 2px solid #333;
+}
+.field-wrapper input {
+  padding: 3px 6px;
+  line-height: 16px;
+}
+.field-wrapper select {
+  line-height: 16px;
+  height: 26px;
+}
+.submit-wrapper {
+  width: 100%;
+  text-align: center;
+}
+input[type='submit'] {
+  display: inline-block;
+}
+
+#graphs {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 2px solid #333;
+}
+#graph-canvas {
+  width: 100%;
+}

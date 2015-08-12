@@ -1,1 +1,1 @@
-# gear-ratio-calculator
+# Gear-Ratio-Calculator

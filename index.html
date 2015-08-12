@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DR:BE Calculator</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/main.css" rel="stylesheet" type="text/css"></link>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<form id="bike-calc">
+			<fieldset>
+				<legend>Preloaded Bikes</legend>
+				<div class="field-wrapper">
+			      <select name="bike-select" id="bike-select" required="required">
+			      	<option value="" selected="selected">Select a Bike</option>
+			        <option value="thundercat">Thundercat</option>
+			        <option value="ninja650">Ninja 650</option>
+			        <option value="shiverGT">Shiver GT</option>
+			        <option value="boxer">Boxer</option>
+			        <option value="mille">Mille</option>
+			        <option value="slingshot">Slingshot</option>
+			        <option value="superBlackbird">Super Blackbird</option>
+			        <option value="k1200s">K1200S</option>
+			        <option value="f41000r">F4 1000R</option>
+			        <option value="castiglioni">Castiglioni</option>
+			        <option value="busa">Busa</option>
+			        <option value="superSlingshot">Super Slingshot</option>
+			        <option value="tripleNine">Triple Nine</option>
+			        <option value="b1125">B-1125</option>
+			        <option value="ninja1400">Ninja 1400</option>
+			        <option value="yzf1000">YZF 1000</option>
+			        <option value="ninja1000r">Ninja 1000R</option>
+			      </select>
+			    </div>
+			</fieldset>
+			<fieldset>
+		    	<legend>Bike Properties</legend>
+		    	<div class="field-wrapper">
+		      		<input type="number" min="0" step="1" name="bhp" id="bhp" required="required" placeholder="BHP"/>
+			    </div>
+			    <div class="field-wrapper">
+		        	<input type="number" min="0" step="1" name="weight" id="weight" required="required" placeholder="Bike Weight"/>
+		      	</div>
+		      	<div class="field-wrapper">
+		        	<input type="number" min="800" max="2400" step="1" name="grip" id="grip" required="required" placeholder="Tire Grip"/>
+		      	</div>
+		      	<div class="field-wrapper">
+		        	<input type="number" min="75" max="80" step="0.001" name="tire-circ" id="tire-circ" required="required" disabled="disabled" placeholder="Tire Circumference"/>
+		      	</div>
+		      	<div class="field-wrapper">
+		        	<input type="number" min="1" step="0.001" name="primary" id="primary" required="required" disabled="disabled" placeholder="Primary Drive Ratio"/>
+		      	</div>
+		      	<div class="field-wrapper">
+		        	<input type="number" min="4000" max="16000" step="500" name="max-rpm" id="max-rpm" required="required" disabled="disabled" placeholder="Max RPM"/>
+		      	</div>
+	    	</fieldset>
+	  		<fieldset>
+		    	<legend>Basic Tuning Properties</legend>
+		    	<div class="field-wrapper">
+	        		<input type="number" name="front-sprocket" id="front-sprocket" required="required" placeholder="Front Sprocket Teeth" min="10" max="19" step="1"/>
+      			</div>
+	      		<div class="field-wrapper">
+	        		<input type="number" name="rear-sprocket" id="rear-sprocket" required="required" placeholder="Rear Sprocket Teeth" min="35" max="55" step="1"/>
+	      		</div>
+			    <div class="field-wrapper">
+		      		<input type="number" min="0" step="1" name="nos-bhp" id="nos-bhp" required="required" placeholder="Nos BHP"/>
+			    </div>
+			    <div class="field-wrapper">
+		      		<input type="number" min="2" max="5" step="0.001" name="nos-duration" id="nos-duration" required="required" placeholder="Nos Duration"/>
+			    </div>
+			    <div class="field-wrapper">
+		      		<input type="number" min="0" step="1" name="nos-gear" id="nos-gear" placeholder="Nos Ignition Gear"/>
+			    </div>
+	  		</fieldset> 
+	  		<fieldset>
+		    	<legend>Gear Settings</legend>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-1-ratio" id="gear-1-ratio" required="required" placeholder="Gear 1 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-2-ratio" id="gear-2-ratio" required="required" placeholder="Gear 2 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-3-ratio" id="gear-3-ratio" required="required" placeholder="Gear 3 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-4-ratio" id="gear-4-ratio" placeholder="Gear 4 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-5-ratio" id="gear-5-ratio" placeholder="Gear 5 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		    	<div class="field-wrapper">
+	      			<input type="number" name="gear-6-ratio" id="gear-6-ratio" placeholder="Gear 6 Ratio" min="0.4" step="0.001" max="5.0"/>
+		    	</div>
+		  </fieldset>
+		  <div class="submit-wrapper">
+		    <input type="submit" value="Calculate"/>
+		  </div>
+		</form>
+		<section id="graphs">
+		  <canvas id="graph-canvas" width="800" height="500"></canvas>
+		</section>
+	</body>
+</html>
