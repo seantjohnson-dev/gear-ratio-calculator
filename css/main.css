@@ -7,61 +7,241 @@ body {
   font-family: Arial, sans-serif;
 }
 
-form {
-  width: 80%;
-  margin: 20px auto 0;
+#bikeCalc {
+  width: 100%;
+  margin: 40px auto;
   overflow: hidden;
   max-width: 800px;
 }
 fieldset {
-  padding: 0 10px 20px;
+  padding: 0 3% 20px;
   margin: 0;
   border: 0;
   width: 100%;
   min-width: 170px;
 }
+fieldset.bikeDependent {
+  display: none;
+}
+fieldset.bikeDependent.showing {
+  display: block;
+}
+fieldset:nth-child(6) {
+  padding-bottom: 0;
+}
 legend {
   display: block;
   text-transform: uppercase;
   font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding: 3px 6px 3px 0;
+  margin-bottom: 5px;
 }
-.field-wrapper {
+.fieldWrapper {
   overflow: hidden;
-  padding: 5px 0;
+  margin: 10px 0;
+  position: relative;
 }
-.field-wrapper:first-child {
-  padding-top: 0;
+.fieldWrapper:first-child {
+  margin-top: 0;
 }
-.field-wrapper:last-child {
-  padding-bottom: 0;
+.fieldWrapper:last-child {
+  margin-bottom: 0;
 }
-.field-wrapper input, .field-wrapper select {
+.fieldWrapper label {
+  line-height: 1.4em;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+.fieldWrapper input, .fieldWrapper select, .fieldWrapper .rangeLabels {
   width: 100%;
   display: block;
   border: 2px solid #333;
-}
-.field-wrapper input {
+  line-height: 20px;
   padding: 3px 6px;
-  line-height: 16px;
 }
-.field-wrapper select {
-  line-height: 16px;
+.fieldWrapper .rangeLabels {
+  border: 0;
+  padding: 0 6px;
+}
+.fieldWrapper .rangeLabels:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.fieldWrapper .rangeLabels .rangeValue {
+  display: block;
+  float: left;
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  width: 4.7619047619047619047619047619048%;
+}
+.fieldWrapper .rangeLabels .rangeValue:first-child {
+  text-indent: 0;
+  white-space: normal;
+  overflow: visible;
+  left: -1.2380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(2) {
+  left: -1.1380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(3) {
+  left: -0.9380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(4) {
+  left: -0.8380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(5) {
+  left: -0.7380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(6) {
+  left: -0.6380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(7) {
+  left: -0.5380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(8) {
+  left: -0.4380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(9) {
+  left: -0.3380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(10) {
+  left: -0.2380952380952380952380952380952%;
+}
+
+.fieldWrapper .rangeLabels .rangeValue:nth-child(11) {
+  text-indent: 0;
+  white-space: normal;
+  overflow: visible;
+}
+
+.fieldWrapper .rangeLabels .rangeValue:nth-child(12) {
+  right: -0.2380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(13) {
+  right: -0.3380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(14) {
+  right: -0.4380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(15) {
+  right: -0.5380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(16) {
+  right: -0.6380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(17) {
+  right: -0.7380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(18) {
+  right: -0.8380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(19) {
+  right: -0.9380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(20) {
+  right: -1.1380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:last-child {
+  text-indent: 0;
+  white-space: normal;
+  overflow: visible;
+  right: -1.2380952380952380952380952380952%;
+}
+.fieldWrapper .rangeLabels .rangeValue:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  height: 6px;
+  background: #000;
+  margin-left: -1px;
+}
+.fieldWrapper select {
+  height: 30px;
+}
+.fieldWrapper .disableInputButton {
+  display: block;
+  text-decoration: none;
+  width: 26px;
   height: 26px;
+  position: absolute;
+  bottom: 2px;
+  right: 26px;
+  z-index: 5;
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
-.submit-wrapper {
+.fieldWrapper .disableInputButton:hover {
+  background: #ccc;
+}
+.fieldWrapper .disableInputButton:before, .fieldWrapper .disableInputButton:after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  top: 11.5px;
+  left: 7px;
+  z-index: 10;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.fieldWrapper .disableInputButton:after {
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+.fieldWrapper .disableInputButton.disabled:before {
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+.fieldWrapper .disableInputButton.disabled:after {
+  -webkit-transform: rotateZ(0);
+  -moz-transform: rotateZ(0);
+  transform: rotateZ(0);
+}
+.submitWrapper {
   width: 100%;
   text-align: center;
+  padding: 20px 0;
 }
 input[type='submit'] {
   display: inline-block;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: transparent;
+  padding: 3px 6px;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
-#graphs {
-  overflow: hidden;
-  max-width: 800px;
-  margin: 20px auto;
-  border: 2px solid #333;
+input[type='submit']:hover {
+  background: #ccc;
 }
-#graph-canvas {
-  width: 100%;
+
+@media all and (min-width: 768px) {
+  .fieldWrapper .rangeLabels .rangeValue {
+    text-align: center;
+    text-indent: 0;
+    white-space: normal;
+  }
 }
