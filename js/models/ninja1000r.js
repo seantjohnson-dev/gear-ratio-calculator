@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.ninja1000r = {
+	_tc.bikeDefaults.ninja1000r = {
 		name: "Ninja 1000R",
-		values: {
+		defaults: {
 	        primary: 1.681,
 	        tireCirc: 79.26,
 	        maxRPM: 14000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.444,
 	        gear6Ratio: 1.348
 	    }
-	}
+	};
+	_tc.Models.ninja1000r = _tc.Models.base.extend(_tc.bikeDefaults.ninja1000r);
 })(jQuery, window);

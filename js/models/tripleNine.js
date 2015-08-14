@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.tripleNine = {
+	_tc.bikeDefaults.tripleNine = {
 		name: "Triple Nine",
-		values: {
+		defaults: {
 	        primary: 1.84,
 	        tireCirc: 76.91,
 	        maxRPM: 11000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.043,
 	        gear6Ratio: 0.958
 	    }
-	}
+	};
+	_tc.Models.tripleNine = _tc.Models.base.extend(_tc.bikeDefaults.tripleNine);
 })(jQuery, window);

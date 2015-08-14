@@ -1,34 +1,5 @@
 $(function () {
 
-    var proxy = function (func) {
-        var self = this;
-        return function() {
-            return func.apply(self, arguments);
-        };
-    };
-
-    var getSprocketDrive = function () {
-        return (this.get("rearSprocket") / this.get("frontSprocket"));
-    };
-    var getOverallDrive = function (gear) {
-        if (_.isString(gear) && _.isNumber(parseInt(gear))) {
-            gear = parseInt(gear);
-        }
-        if (gear < 1 || gear > 6) {
-            throw "Invalid Gear Value Supplied to getOverallDrive. The gear value passed needs to be 1-6 as a string or an integer.";
-        }
-        return (this.get("primary") * getSprocketDrive.apply(this, arguments) * this.get("gear" + gear + "Ratio"));
-    };
-
-    var getGripConstant = function () {
-        return ((stockGrip / constants.newtonsPerPound) / weight);
-    };
-
-    var getGrip = function (gripConstant, weight, pressure) {
-        return (gripConstant * weight / pressure);
-    };
-
-
     $(".disableInputButton").click(function (e) {
         e.preventDefault();
         toggleInputDisabledState($(e.currentTarget), $(e.currentTarget).siblings('input'));
@@ -90,12 +61,8 @@ $(function () {
         castiglioni: new baseBikeModel(),
         busa: new busa(),
         yzf1000: new yzf1000()
-    }
-    var constants = {
-      feetPerMile: 5280,
-      newtonsPerPound: 4.44822162,
-      millimetersPerInch: 25.4
     },
+    
     activeValues = {},
     elems = {
         $bikeName: $("#bikeName"),

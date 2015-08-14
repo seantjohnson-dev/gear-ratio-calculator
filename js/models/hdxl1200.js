@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.hdxl1200 = {
+	_tc.bikeDefaults.hdxl1200 = {
 		name: "HD-XL1200",
-		values: {
+		defaults: {
 		    primary: 2.095,
 		    tireCirc: 79.95,
 		    maxRPM: 6000,
@@ -18,5 +18,6 @@
 		    gear5Ratio: 1.0,
 		    gear6Ratio: 0.4
 		}
-	}
+	};
+	_tc.Models.hdxl1200 = _tc.Models.base.extend(_tc.bikeDefaults.hdxl1200);
 })(jQuery, window);

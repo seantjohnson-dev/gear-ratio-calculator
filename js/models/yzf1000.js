@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.yzf1000 = {
+	_tc.bikeDefaults.yzf1000 = {
 		name: "YZF 1000",
-		values: {
+		defaults: {
 	        primary: 1.512,
 	        tireCirc: 79.26,
 	        maxRPM: 14000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.364,
 	        gear6Ratio: 1.269
 	    }
-	}
+	};
+	_tc.Models.yzf1000 = _tc.Models.base.extend(_tc.bikeDefaults.yzf1000);
 })(jQuery, window);

@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.shiverGT = {
+	_tc.bikeDefaults.shiverGT = {
 		name: "Shiver GT",
-		values: {
+		defaults: {
 	        primary: 1.75,
 	        tireCirc: 77.9,
 	        maxRPM: 12000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.13,
 	        gear6Ratio: 1.04
 	    }
-	}
+	};
+	_tc.Models.shiverGT = _tc.Models.base.extend(_tc.bikeDefaults.shiverGT);
 })(jQuery, window);

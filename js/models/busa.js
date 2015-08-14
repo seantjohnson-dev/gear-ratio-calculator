@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.busa = {
+	_tc.bikeDefaults.busa = {
 		name: "Busa",
-		values: {
+		defaults: {
 	        primary: 1.596,
 	        tireCirc: 76.91,
 	        maxRPM: 12500,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.136,
 	        gear6Ratio: 1.043
 	    }
-	}
+	};
+	_tc.Models.busa = _tc.Models.base.extend(_tc.bikeDefaults.busa);
 })(jQuery, window);

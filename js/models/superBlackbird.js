@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.superBlackbird = {
+	_tc.bikeDefaults.superBlackbird = {
 		name: "Super Blackbird",
-		values: {
+		defaults: {
 	        primary: 1.571,
 	        tireCirc: 77.9,
 	        maxRPM: 11000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.167,
 	        gear6Ratio: 1.042
 	    }
-	}
+	};
+	_tc.Models.superBlackbird = _tc.Models.base.extend(_tc.bikeDefaults.superBlackbird);
 })(jQuery, window);

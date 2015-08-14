@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.b1125 = {
+	_tc.bikeDefaults.b1125 = {
 		name: "B-1125",
-		values: {
+		defaults: {
 	        primary: 1.8055,
 	        tireCirc: 77.9,
 	        maxRPM: 10500,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.042,
 	        gear6Ratio: 0.96
 	    }
-	}
+	};
+	_tc.Models.b1125 = _tc.Models.base.extend(_tc.bikeDefaults.b1125);
 })(jQuery, window);

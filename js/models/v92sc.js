@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.v92sc = {
+	_tc.bikeDefaults.v92sc = {
 		name: "V92SC",
-		values: {
+		defaults: {
 	        primary: 2.095,
 	        tireCirc: 75.67,
 	        maxRPM: 6000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 0.619,
 	        gear6Ratio: 0.4
 	    }
-	}
+	};
+	_tc.Models.v92sc = _tc.Models.base.extend(_tc.bikeDefaults.v92sc);
 })(jQuery, window);

@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.superSlingshot = {
+	_tc.bikeDefaults.superSlingshot = {
 		name: "Super Slingshot",
-		values: {
+		defaults: {
 	        primary: 1.617,
 	        tireCirc: 76.91,
 	        maxRPM: 13500,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.36,
 	        gear6Ratio: 1.269
 	    }
-	}
+	};
+	_tc.Models.superSlingshot = _tc.Models.base.extend(_tc.bikeDefaults.superSlingshot);
 })(jQuery, window);

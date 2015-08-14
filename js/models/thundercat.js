@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.thundercat = {
+	_tc.bikeDefaults.thundercat = {
 		name: "Thundercat",
-		values: {
+		defaults: {
 	        primary: 1.708,
 	        tireCirc: 77.15,
 	        maxRPM: 15000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.19,
 	        gear6Ratio: 1.074
 	    }
-	}
+	};
+	_tc.Models.thundercat = _tc.Models.base.extend(_tc.bikeDefaults.thundercat);
 })(jQuery, window);

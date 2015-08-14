@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.f41000r = {
+	_tc.bikeDefaults.f41000r = {
 		name: "F4 1000R",
-		values: {
+		defaults: {
 	        primary:  1.7083,
 	        tireCirc: 79.26,
 	        maxRPM: 13500,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.32,
 	        gear6Ratio: 1.21
 	    }
-	}
+	};
+	_tc.Models.f41000r = _tc.Models.base.extend(_tc.bikeDefaults.f41000r);
 })(jQuery, window);

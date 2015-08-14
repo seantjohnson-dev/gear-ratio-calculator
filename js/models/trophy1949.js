@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.trophy1949 = {
+	_tc.bikeDefaults.trophy1949 = {
 		name: "1949 Trophy",
-		values: {
+		defaults: {
 	        primary: 2.784,
 	        tireCirc: 84.823,
 	        maxRPM: 7000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 0.4,
 	        gear6Ratio: 0.4
 	    }
-	}
+	};
+	_tc.Models.trophy1949 = _tc.Models.base.extend(_tc.bikeDefaults.trophy1949);
 })(jQuery, window);

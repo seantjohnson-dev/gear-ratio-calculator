@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.mille = {
+	_tc.bikeDefaults.mille = {
 		name: "Mille",
-			values: {
+			defaults: {
 	        primary: 1.9354,
 	        tireCirc: 76.91,
 	        maxRPM: 12000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 0.96,
 	        gear6Ratio: 0.88
 	    }
-	}
+	};
+	_tc.Models.mille = _tc.Models.base.extend(_tc.bikeDefaults.mille);
 })(jQuery, window);

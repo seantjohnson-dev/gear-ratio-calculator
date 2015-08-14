@@ -1,7 +1,7 @@
 ;(function ($, win) {
-	_tc.bikeProps.k1200s = {
+	_tc.bikeDefaults.k1200s = {
 		name: "K12000S",
-		values: {
+		defaults: {
 	        primary: 1.559,
 	        tireCirc: 76.91,
 	        maxRPM: 11000,
@@ -18,5 +18,6 @@
 	        gear5Ratio: 1.14,
 	        gear6Ratio: 1.01
 	    }
-	}
+	};
+	_tc.Models.k1200s = _tc.Models.base.extend(_tc.bikeDefaults.k1200s);
 })(jQuery, window);
