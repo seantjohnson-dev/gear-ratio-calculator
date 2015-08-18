@@ -20,12 +20,6 @@ fieldset {
   width: 100%;
   min-width: 170px;
 }
-fieldset.bikeDependent {
-  display: none;
-}
-fieldset.bikeDependent.showing {
-  display: block;
-}
 fieldset:nth-child(6) {
   padding-bottom: 0;
 }

@@ -2,7 +2,8 @@
 	win.TuneCalc = win._tc = $.extend(true, {}, Backbone.Events, {
 		EventNames: {
 			FieldChanged: "FieldChanged",
-			BikeChanged: "BikeChanged"
+			BikeChanged: "BikeChanged",
+			TemplateReceived: "TemplateReceived"
 		},
 		Templates: {},
 		Utils: {
@@ -26,6 +27,10 @@
 	_tc.Factory.Views.baseView = Backbone.View.extend({
 		proxy: _tc.Utils.proxy,
 		options: {},
+		events: function () {
+			var evts = {};
+			return evts;
+		},
 		initialize: function (options) {
 			this.options = $.extend(true, this.options, options);
 			this.getTemplateString();
@@ -35,12 +40,15 @@
 				console.log("You must define View.options.templateUrl on the View.");
 				return;
 			}
-			$.get(url).done(this.proxy(this.setTemplate)).fail(this.proxy(function () {
+			$.get(this.options.templateUrl)
+			.done(this.proxy(this.setTemplate))
+			.fail(this.proxy(function () {
 				throw "Template String Not Found. View Instance: " + this;
 			}));
 		},
 		setTemplate: function (data) {
 			this.template = Handlebars.compile(data);
+			_tc.trigger(_tc.EventNames.TemplateReceived, this);
 			return this;
 		}
 	});
@@ -57,10 +65,10 @@
             tirePressure: 100
         },
         proxy: _tc.Utils.proxy,
-        _calculateGrip: function () {
+        calculateGrip: function () {
         	return ((this.defaults.grip / this.defaults.weight) * this.get("weight") / this.get("tirePressure"));
         },
-        _getTotalGearDrive: function (gear) {
+        getTotalGearDrive: function (gear) {
         	if (_.isString(gear) || _.isNumber(parseInt(gear))) {
             	gear = parseInt(gear);
         	}
@@ -69,7 +77,7 @@
 	        }
 	        return (this.get("primary") * this._getSprocketDrive() * this.get("gear" + gear + "Ratio"));
         },
-        _getSprocketDrive: function () {
+        getSprocketDrive: function () {
         	return (this.get("rearSprocket") / this.get("frontSprocket"));
         }
     });

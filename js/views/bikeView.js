@@ -1,5 +1,6 @@
 ;(function ($, win) {
 	_tc.Factory.Views.bikeView = _tc.Factory.Views.baseView.extend({
+		el: 'div.bikeName',
 		options: {
 			disabledInputClass: "disabled",
 			templateUrl: "/templates/bike.hbs"
@@ -124,7 +125,7 @@
 			var evts = {};
 			evts["change input"] = "onFieldChange";
 			evts["change select"] = "onFieldChange";
-			return _.extend(_tc.Factory.Models.baseModel.prototype.events.apply(this, arguments), evts);
+			return _.extend(_tc.Factory.Views.baseView.prototype.events.apply(this, arguments), evts);
 		},
 		onFieldChange: function (e) {
 			var $input = $(e.currentTarget);

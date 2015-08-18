@@ -38,6 +38,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		//Form View Should be rendered here
+		<form id="bikeCalc" class="formView">
+  			//Form View Should be rendered here
+		</form>
 	</body>
 </html>

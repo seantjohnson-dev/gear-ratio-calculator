@@ -9,13 +9,43 @@
 		events: function () {
 			var evts = {};
 			evts["change " + this.options.bikeSelector] = "onBikeChange";
-			return _.extend(_tc.Factory.Models.baseModel.prototype.events.apply(this, arguments), evts);
+			return _.extend(_tc.Factory.Views.baseView.prototype.events.apply(this, arguments), evts);
 		},
-		initialize: function () {
+		initialize: function (options) {
 			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
-			this.getElems();
+			_tc.on(_tc.EventNames.TemplateReceived, this.proxy(function (view) {
+				if (this === view) {
+					this.getElems().populateBikeSelector().render();
+				}
+			}));
+		},
+		createChildren: function () {
 			this.bikeView = new _tc.Factory.Views.bikeView({el: this.$bikeViewElem});
-			this.render();
+			return this;
+		},
+		clearBikeOptions: function () {
+			this.$bikeOpts = $();
+			return this;
+		},
+		getBikeOptions: function () {
+			return this.$bikeOpts;
+		},
+		createBikeOption: function (name) {
+			this.clearBikeOptions();
+			if (!name) {
+				this.$bikeOpts.append($("<option/>").text("Select a Bike"));
+			} else {
+				this.$bikeOpts.append($("<option/>").val(name).text(name));
+			}
+			return this;
+		},
+		populateBikeSelector: function () {
+			this.clearBikeOptions();
+			this.collection.each(this.proxy(function (model) {
+				this.createBikeOption(model.get('name'));
+			}));
+			this.$bikeSelector.html(this.createBikeOption()).append(this.$bikeOpts);
+			return this;
 		},
 		getElems: function () {
 			this.$bikeSelector = this.$(this.options.bikeSelector);
@@ -28,9 +58,15 @@
 	            _tc.trigger(_tc.EventNames.BikeChanged, bikeName);
 	        }
 		},
+		renderChildViews: function () {
+
+		},
 		render: function () {
-			// this.bikeView.render();
-			// this.$el.html(this.template());
+			this.render(this.template());
+			if (!this._children) {
+				this._children = [];
+				this.createChildren();
+			}
 		}
 	});
 })(jQuery, window);
