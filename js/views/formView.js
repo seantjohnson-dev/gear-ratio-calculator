@@ -13,11 +13,7 @@
 		},
 		initialize: function (options) {
 			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
-			_tc.on(_tc.EventNames.TemplateReceived, this.proxy(function (view) {
-				if (this === view) {
-					this.getElems().populateBikeSelector().render();
-				}
-			}));
+			console.log(this._templateString);
 		},
 		createChildren: function () {
 			this.bikeView = new _tc.Factory.Views.bikeView({el: this.$bikeViewElem});

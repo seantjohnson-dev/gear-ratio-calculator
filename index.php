@@ -9,7 +9,15 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
 		<script src="js/_base.js"></script>
-
+		<script>
+			<?php
+				$templates = array(
+					"formView" => file_get_contents("templates/form.hbs"),
+					"bikeView" => file_get_contents("templates/bike.hbs")
+				);
+				echo "_tc.Templates = " . json_encode($templates);
+			?>
+		</script>
 		<script src="js/models/hdxl1200.js"></script>
 		<script src="js/models/v92sc.js"></script>
 		<script src="js/models/trophy1949.js"></script>

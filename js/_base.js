@@ -5,7 +5,6 @@
 			BikeChanged: "BikeChanged",
 			TemplateReceived: "TemplateReceived"
 		},
-		Templates: {},
 		Utils: {
 			proxy: function (func) {
 	            var self = this;
@@ -36,20 +35,19 @@
 			this.getTemplateString();
 		},
 		getTemplateString: function () {
+			this.templateString = "";
 			if (!this.options.templateUrl) {
 				console.log("You must define View.options.templateUrl on the View.");
 				return;
 			}
 			$.get(this.options.templateUrl)
-			.done(this.proxy(this.setTemplate))
+			.done(this.proxy(function (data) {
+				this._templateString = data;
+				this.template = Handlebars.compile(data);
+			}))
 			.fail(this.proxy(function () {
 				throw "Template String Not Found. View Instance: " + this;
 			}));
-		},
-		setTemplate: function (data) {
-			this.template = Handlebars.compile(data);
-			_tc.trigger(_tc.EventNames.TemplateReceived, this);
-			return this;
 		}
 	});
 
