@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.f41000r = {
+	_tc.Factory.Defaults.f41000r = {
 		name: "F4 1000R",
 		defaults: {
 	        primary:  1.7083,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.21
 	    }
 	};
-	_tc.Models.f41000r = _tc.Models.base.extend(_tc.bikeDefaults.f41000r);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.f41000r));
 })(jQuery, window);

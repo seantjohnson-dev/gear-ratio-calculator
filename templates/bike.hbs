@@ -1,0 +1,123 @@
+<fieldset class="bikeDependent">
+	<legend>Bike Constants</legend>
+	<div class="fieldWrapper">
+		<label for="tireCirc">Tire Circumference (In Inches)</label>
+    	<input type="number" min="75" max="80" step="0.001" name="tireCirc" class="tireCirc" required="required" disabled="disabled" readonly="readonly" placeholder="Tire Circumference (In Inches)" value="{{tireCirc}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="primary">Primary Drive Ratio</label>
+    	<input type="number" min="1" step="0.001" name="primary" class="primary" required="required" disabled="disabled" readonly="readonly" placeholder="Primary Drive Ratio" value="{{primary}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="maxRPM">Max RPM</label>
+    	<input type="number" min="4000" max="16000" step="500" name="maxRPM" class="maxRPM" required="required" disabled="disabled" readonly="readonly" placeholder="Max RPM" value="{{maxRPM}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="wheelBase">Wheel Base (In Millimeters)</label>
+    	<input type="number" min="0" step="1" name="wheelBase" class="wheelBase" required="required" disabled="disabled" readonly="readonly" placeholder="Wheel Base (In Millimeters)" value="{{wheelBase}}"/>
+  	</div>
+</fieldset>
+<fieldset class="bikeDependent">
+	<legend>Bike Constants (After Upgrades and Tire Pressure)</legend>
+	<div class="fieldWrapper">
+		<label for="bhp">Break Horsepower (BHP)</label>
+  		<input type="number" min="0" step="0.001" name="bhp" class="bhp" required="required" placeholder="Break Horsepower (BHP)" value="{{bhp}}"/>
+    </div>
+    <div class="fieldWrapper">
+    	<label for="weight">Bike Weight (In Pounds)</label>
+    	<input type="number" min="0" step="1" name="weight" class="weight" required="required" placeholder="Bike Weight (In Pounds)" value="{{weight}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="tirePressure">Tire Pressure (In Percent)</label>
+  		<div class="rangeLabels">
+  			<span class="rangeValue leftHalf">90</span>
+  			<span class="rangeValue leftHalf">91</span>
+  			<span class="rangeValue leftHalf">92</span>
+  			<span class="rangeValue leftHalf">93</span>
+  			<span class="rangeValue leftHalf">94</span>
+  			<span class="rangeValue leftHalf">95</span>
+  			<span class="rangeValue leftHalf">96</span>
+  			<span class="rangeValue leftHalf">97</span>
+  			<span class="rangeValue leftHalf">98</span>
+  			<span class="rangeValue leftHalf">99</span>
+  			<span class="rangeValue">100</span>
+  			<span class="rangeValue rightHalf">101</span>
+  			<span class="rangeValue rightHalf">102</span>
+  			<span class="rangeValue rightHalf">103</span>
+  			<span class="rangeValue rightHalf">104</span>
+  			<span class="rangeValue rightHalf">105</span>
+  			<span class="rangeValue rightHalf">106</span>
+  			<span class="rangeValue rightHalf">107</span>
+  			<span class="rangeValue rightHalf">108</span>
+  			<span class="rangeValue rightHalf">109</span>
+  			<span class="rangeValue rightHalf">110</span>
+  		</div>
+    	<input type="range" min="90" max="110" defaultValue="100" step="1" name="tirePressure" class="tirePressure" required="required" placeholder="Tire Pressure" value="{{tirePressure}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="grip">Tire Grip (In Newtons)</label>
+    	<input type="number" min="0" step="1" name="grip" class="grip" required="required" placeholder="Tire Grip (In Newtons)" value="{{grip}}"/>
+  	</div>
+  	<div class="fieldWrapper">
+  		<label for="swingArm">Swingarm Installed</label>
+    	<select name="swingArm" class="swingArm" required="required">
+    		<option value="0.00" selected="selected">Stock Swingarm</option>
+    		<option value="0.03">Swingarm 1</option>
+    		<option value="0.05">Swingarm 2</option>
+    		<option value="0.06">Swingarm 3</option>
+    		<option value="0.07">Swingarm 4</option>
+    	</select>
+  	</div>
+</fieldset>
+	<fieldset class="bikeDependent">
+	<legend>Nitrous Settings</legend>
+    <div class="fieldWrapper">
+    	<label for="nosBHP">NOS Break Horsepower (BHP)</label>
+  		<input type="number" min="0" step="1" name="nosBHP" class="nosBHP" required="required" placeholder="NOS Break Horsepower (BHP)" value="{{nosBHP}}"/>
+    </div>
+    <div class="fieldWrapper">
+    	<label for="nosDuration">NOS Duration (In Seconds)</label>
+  		<input type="number" min="2.000" max="5.000" step="0.001" name="nosDuration" class="nosDuration" required="required" placeholder="NOS Duration (In Seconds)" value="{{nosDuration}}"/>
+    </div>
+	</fieldset> 
+	<fieldset class="bikeDependent">
+	<legend>Sprocket Settings</legend>
+	<div class="fieldWrapper">
+		<label for="frontSprocket">Front Sprocket Teeth</label>
+		<input type="number" name="frontSprocket" class="frontSprocket" required="required" placeholder="Front Sprocket Teeth" min="10" max="19" step="1" value="{{frontSprocket}}"/>
+		</div>
+		<div class="fieldWrapper">
+			<label for="rearSprocket">Rear Sprocket Teeth</label>
+		<input type="number" name="rearSprocket" class="rearSprocket" required="required" placeholder="Rear Sprocket Teeth" min="35" max="55" step="1" value="{{rearSprocket}}"/>
+		</div>
+</fieldset>
+<fieldset class="bikeDependent">
+	<legend>Gear Settings</legend>
+<div class="fieldWrapper">
+	<label for="gear1Ratio">Gear 1 Ratio</label>
+		<input type="number" name="gear1Ratio" class="gear1Ratio" class="gear" required="required" placeholder="Gear 1 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear1Ratio}}"/>
+</div>
+<div class="fieldWrapper">
+	<label for="gear2Ratio">Gear 2 Ratio</label>
+		<input type="number" name="gear2Ratio" class="gear2Ratio" class="gear" required="required" placeholder="Gear 2 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear2Ratio}}"/>
+</div>
+<div class="fieldWrapper">
+	<label for="gear3Ratio">Gear 3 Ratio</label>
+		<input type="number" name="gear3Ratio" class="gear3Ratio" class="gear" required="required" placeholder="Gear 3 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear3Ratio}}"/>
+</div>
+<div class="fieldWrapper">
+	<label for="gear4Ratio">Gear 4 Ratio</label>
+		<input type="number" name="gear4Ratio" class="gear4Ratio" class="gear" placeholder="Gear 4 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear4Ratio}}"/>
+		<a href="#" class="disableInputButton" title="Disable Gear">Disable</a>
+</div>
+<div class="fieldWrapper">
+	<label for="gear5Ratio">Gear 5 Ratio</label>
+		<input type="number" name="gear5Ratio" class="gear5Ratio" class="gear" placeholder="Gear 5 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear5Ratio}}"/>
+		<a href="#" class="disableInputButton" title="Disable Gear">Disable</a>
+</div>
+<div class="fieldWrapper">
+	<label for="gear6Ratio">Gear 6 Ratio</label>
+		<input type="number" name="gear6Ratio" class="gear6Ratio" class="gear" placeholder="Gear 6 Ratio" min="0.4" step="0.001" max="5.0" value="{{gear6Ratio}}"/>
+		<a href="#" class="disableInputButton" title="Disable Gear">Disable</a>
+</div>
+</fieldset>

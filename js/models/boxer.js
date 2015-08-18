@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.boxer = {
+	_tc.Factory.Defaults.boxer = {
 		name: "Boxer",
 		defaults: {
 	        primary: 1.737,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.84
 	    }
 	};
-	_tc.Models.boxer = _tc.Models.base.extend(_tc.bikeDefaults.boxer);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.boxer));
 })(jQuery, window);

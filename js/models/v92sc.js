@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.v92sc = {
+	_tc.Factory.Defaults.v92sc = {
 		name: "V92SC",
 		defaults: {
 	        primary: 2.095,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.4
 	    }
 	};
-	_tc.Models.v92sc = _tc.Models.base.extend(_tc.bikeDefaults.v92sc);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.v92sc));
 })(jQuery, window);

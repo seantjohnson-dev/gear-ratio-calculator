@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.mille = {
+	_tc.Factory.Defaults.mille = {
 		name: "Mille",
 			defaults: {
 	        primary: 1.9354,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.88
 	    }
 	};
-	_tc.Models.mille = _tc.Models.base.extend(_tc.bikeDefaults.mille);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.mille));
 })(jQuery, window);

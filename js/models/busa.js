@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.busa = {
+	_tc.Factory.Defaults.busa = {
 		name: "Busa",
 		defaults: {
 	        primary: 1.596,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.043
 	    }
 	};
-	_tc.Models.busa = _tc.Models.base.extend(_tc.bikeDefaults.busa);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.busa));
 })(jQuery, window);

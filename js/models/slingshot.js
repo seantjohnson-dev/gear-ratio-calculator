@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.slingshot = {
+	_tc.Factory.Defaults.slingshot = {
 		name: "Slingshot",
 		defaults: {
 	        primary: 1.974,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.208
 	    }
 	};
-	_tc.Models.slingshot = _tc.Models.base.extend(_tc.bikeDefaults.slingshot);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.slingshot));
 })(jQuery, window);

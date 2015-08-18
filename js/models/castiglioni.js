@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.castiglioni = $.extend(true, {}, _tc.bikeDefaults.f41000r, {
+	 _tc.Factory.Defaults.castiglioni = {
 		name: "Castiglioni",
 		defaults: {
 	        primary: 1.58,
@@ -10,5 +10,5 @@
 	        gear6Ratio: 1.19
 	    }
 	};
-	_tc.Models.castiglioni = _tc.Models.base.extend(_tc.bikeDefaults.castiglioni);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel($.extend(true, {}, _tc.Factory.Defaults.f41000r, _tc.Factory.Defaults.castiglioni)));
 })(jQuery, window);

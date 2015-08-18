@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.k1200s = {
+	_tc.Factory.Defaults.k1200s = {
 		name: "K12000S",
 		defaults: {
 	        primary: 1.559,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.01
 	    }
 	};
-	_tc.Models.k1200s = _tc.Models.base.extend(_tc.bikeDefaults.k1200s);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.k1200s));
 })(jQuery, window);

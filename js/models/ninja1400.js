@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.ninja1400 = {
+	_tc.Factory.Defaults.ninja1400 = {
 		name: "Ninja 1400",
 		defaults: {
 	        primary: 1.556,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.036
 	    }
 	};
-	_tc.Models.ninja1400 = _tc.Models.base.extend(_tc.bikeDefaults.ninja1400);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.ninja1400));
 })(jQuery, window);

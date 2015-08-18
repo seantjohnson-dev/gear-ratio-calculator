@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.yzf1000 = {
+	_tc.Factory.Defaults.yzf1000 = {
 		name: "YZF 1000",
 		defaults: {
 	        primary: 1.512,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.269
 	    }
 	};
-	_tc.Models.yzf1000 = _tc.Models.base.extend(_tc.bikeDefaults.yzf1000);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.yzf1000));
 })(jQuery, window);

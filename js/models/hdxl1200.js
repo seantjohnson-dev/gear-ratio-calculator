@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.hdxl1200 = {
+	_tc.Factory.Defaults.hdxl1200 = {
 		name: "HD-XL1200",
 		defaults: {
 		    primary: 2.095,
@@ -19,5 +19,5 @@
 		    gear6Ratio: 0.4
 		}
 	};
-	_tc.Models.hdxl1200 = _tc.Models.base.extend(_tc.bikeDefaults.hdxl1200);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.hdxl1200));
 })(jQuery, window);

@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.b1125 = {
+	_tc.Factory.Defaults.b1125 = {
 		name: "B-1125",
 		defaults: {
 	        primary: 1.8055,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.96
 	    }
 	};
-	_tc.Models.b1125 = _tc.Models.base.extend(_tc.bikeDefaults.b1125);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.b1125));
 })(jQuery, window);

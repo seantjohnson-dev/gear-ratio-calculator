@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.tripleNine = {
+	_tc.Factory.Defaults.tripleNine = {
 		name: "Triple Nine",
 		defaults: {
 	        primary: 1.84,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.958
 	    }
 	};
-	_tc.Models.tripleNine = _tc.Models.base.extend(_tc.bikeDefaults.tripleNine);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.tripleNine));
 })(jQuery, window);

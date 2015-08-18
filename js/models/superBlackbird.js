@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.superBlackbird = {
+	_tc.Factory.Defaults.superBlackbird = {
 		name: "Super Blackbird",
 		defaults: {
 	        primary: 1.571,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.042
 	    }
 	};
-	_tc.Models.superBlackbird = _tc.Models.base.extend(_tc.bikeDefaults.superBlackbird);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.superBlackbird));
 })(jQuery, window);

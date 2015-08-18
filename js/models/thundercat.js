@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.thundercat = {
+	_tc.Factory.Defaults.thundercat = {
 		name: "Thundercat",
 		defaults: {
 	        primary: 1.708,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.074
 	    }
 	};
-	_tc.Models.thundercat = _tc.Models.base.extend(_tc.bikeDefaults.thundercat);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.thundercat));
 })(jQuery, window);

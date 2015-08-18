@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.shiverGT = {
+	_tc.Factory.Defaults.shiverGT = {
 		name: "Shiver GT",
 		defaults: {
 	        primary: 1.75,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 1.04
 	    }
 	};
-	_tc.Models.shiverGT = _tc.Models.base.extend(_tc.bikeDefaults.shiverGT);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.shiverGT));
 })(jQuery, window);

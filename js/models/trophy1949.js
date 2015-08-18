@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.bikeDefaults.trophy1949 = {
+	_tc.Factory.Defaults.trophy1949 = {
 		name: "1949 Trophy",
 		defaults: {
 	        primary: 2.784,
@@ -19,5 +19,5 @@
 	        gear6Ratio: 0.4
 	    }
 	};
-	_tc.Models.trophy1949 = _tc.Models.base.extend(_tc.bikeDefaults.trophy1949);
+	_tc.bikes.push(new _tc.Factory.Models.baseModel(_tc.Factory.Defaults.trophy1949));
 })(jQuery, window);
