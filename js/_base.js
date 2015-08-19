@@ -50,7 +50,8 @@
                 torqueToHP: 5252,
                 gearRatioMin: 0.4,
                 gearRatioMax: 5.0,
-
+                gravityInMeters: 9.80665
+                gravityInFeet: 32.17404856,
                 feetInMile: 5280,
                 feetInMeter: 3.28084,
                 kilometersInMile: 1.60934,
