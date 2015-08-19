@@ -4,8 +4,12 @@
 			templateUrl: "/templates/form.hbs",
 			dependentSelector: ".bikeDependent",
 			bikeSelector: ".bikeName",
-			bikeViewSelector: ".bikeView",
+			bikeViewWrapperSelector: ".bikeViewWrapper",
+			localStorageVarName: "customModels"
 		},
+		model: new Backbone.Model({bikeOptions: []}),
+		template: Handlebars.compile(_tc.Templates.formView),
+		childViews: {},
 		events: function () {
 			var evts = {};
 			evts["change " + this.options.bikeSelector] = "onBikeChange";
@@ -13,56 +17,65 @@
 		},
 		initialize: function (options) {
 			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
-			console.log(this._templateString);
-		},
-		createChildren: function () {
-			this.bikeView = new _tc.Factory.Views.bikeView({el: this.$bikeViewElem});
-			return this;
-		},
-		clearBikeOptions: function () {
-			this.$bikeOpts = $();
-			return this;
-		},
-		getBikeOptions: function () {
-			return this.$bikeOpts;
-		},
-		createBikeOption: function (name) {
-			this.clearBikeOptions();
-			if (!name) {
-				this.$bikeOpts.append($("<option/>").text("Select a Bike"));
+			var models = this.getCustomModels();
+			if (models) {
+				this.collection = new _tc.Factory.Collections.baseCollection(models);
 			} else {
-				this.$bikeOpts.append($("<option/>").val(name).text(name));
+				this.collection = new _tc.Factory.Collections.baseCollection(_tc.bikes);
 			}
+			_tc.on(_tc.EventNames.FieldChanged, this.proxy(function (obj) {
+				this.saveCustomModels();
+			}));
+			this.populateBikeOptions().render();
+		},
+		createBikeOption: function (name, selected) {
+			var $option;
+			if (!name) {
+				$option = $("<option/>").text("Select a Bike");
+			} else {
+				$option = $("<option/>").val(name).text(name);
+			}
+			if (selected) {
+				$option.prop("selected", true).attr("selected", "selected");
+			}
+			this.model.attributes.bikeOptions.push({text: $option.wrap("<div/>").parent().html()});
 			return this;
 		},
-		populateBikeSelector: function () {
-			this.clearBikeOptions();
+		populateBikeOptions: function () {
+			this.model.attributes.bikeOptions = [];
+			this.createBikeOption("", true);
 			this.collection.each(this.proxy(function (model) {
 				this.createBikeOption(model.get('name'));
 			}));
-			this.$bikeSelector.html(this.createBikeOption()).append(this.$bikeOpts);
-			return this;
-		},
-		getElems: function () {
-			this.$bikeSelector = this.$(this.options.bikeSelector);
-			this.$bikeViewElem = this.$(this.options.bikeViewSelector);
 			return this;
 		},
 		onBikeChange: function (e) {
-	        var bikeName = this.$bikeSelector.find("option:selected").val();
+	        var bikeName = $(e.currentTarget).find("option:selected").val();
 	        if (bikeName !== "") {
-	            _tc.trigger(_tc.EventNames.BikeChanged, bikeName);
+	        	if (!this.childViews[bikeName]) {
+	        		var model = this.collection.findWhere({name: bikeName});
+	            	this.childViews[bikeName] = new _tc.Factory.Views.bikeView({model: model});
+	        	}
+	            this.$bikeViewWrapper = this.$(this.options.bikeViewWrapperSelector);
+	            this.$bikeViewWrapper.html(this.childViews[bikeName].render().el);
 	        }
 		},
-		renderChildViews: function () {
-
-		},
-		render: function () {
-			this.render(this.template());
-			if (!this._children) {
-				this._children = [];
-				this.createChildren();
+		getCustomModels: function () {
+			var customModels;
+			if (Modernizr.localstorage) {
+				customModels = JSON.parse(localStorage.getItem(this.options.localStorageVarName));
+			} else {
+				customModels = JSON.parse(Cookies.get(this.options.localStorageVarName));
 			}
+			return customModels;
+		},
+		saveCustomModels: function () {
+			if (Modernizr.localstorage) {
+				localStorage.setItem(this.options.localStorageVarName, JSON.stringify(this.collection.toJSON()));
+			} else {
+				Cookies.set(this.options.localStorageVarName, JSON.stringify(this.collection.toJSON()));
+			}
+			return this;
 		}
 	});
 })(jQuery, window);

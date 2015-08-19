@@ -2,8 +2,8 @@
 	win.TuneCalc = win._tc = $.extend(true, {}, Backbone.Events, {
 		EventNames: {
 			FieldChanged: "FieldChanged",
-			BikeChanged: "BikeChanged",
-			TemplateReceived: "TemplateReceived"
+			TemplateReceived: "TemplateReceived",
+			ModelRecalculated: "ModelRecalculated"
 		},
 		Utils: {
 			proxy: function (func) {
@@ -26,28 +26,17 @@
 	_tc.Factory.Views.baseView = Backbone.View.extend({
 		proxy: _tc.Utils.proxy,
 		options: {},
+		model: {},
 		events: function () {
 			var evts = {};
 			return evts;
 		},
 		initialize: function (options) {
 			this.options = $.extend(true, this.options, options);
-			this.getTemplateString();
 		},
-		getTemplateString: function () {
-			this.templateString = "";
-			if (!this.options.templateUrl) {
-				console.log("You must define View.options.templateUrl on the View.");
-				return;
-			}
-			$.get(this.options.templateUrl)
-			.done(this.proxy(function (data) {
-				this._templateString = data;
-				this.template = Handlebars.compile(data);
-			}))
-			.fail(this.proxy(function () {
-				throw "Template String Not Found. View Instance: " + this;
-			}));
+		render: function () {
+			this.$el.html(this.template(this.model.toJSON()));
+			return this;
 		}
 	});
 
@@ -57,14 +46,23 @@
 			newtonsPerPound: 4.44822162,
 			millimetersPerInch: 25.4
 	    },
-        defaults: {
-            nosBHP: 0,
-            nosDuration: 3.0,            
-            tirePressure: 100
-        },
         proxy: _tc.Utils.proxy,
-        calculateGrip: function () {
-        	return ((this.defaults.grip / this.defaults.weight) * this.get("weight") / this.get("tirePressure"));
+        initialize: function (attrs, options) {
+        	this.options = $.extend(true, this.options, options);
+        	_tc.on(_tc.EventNames.FieldChanged, this.proxy(this.reCalc));
+        },
+        reCalc: function () {
+        	this.calcGrip().calcWheelBase();
+        	_tc.trigger(_tc.EventNames.ModelRecalculated, this);
+        	return this;
+        },
+        calcGrip: function () {
+        	this.set("grip", Math.round((this.attributes.defaults.grip / (this.attributes.defaults.weight * this.constants.newtonsPerPound)) * (this.get("weight") * this.constants.newtonsPerPound) / (this.get("tirePressure") / 100)));
+        	return this;
+        },
+        calcWheelBase: function () {
+        	this.set("wheelBase", this.attributes.defaults.wheelBase + (this.get("wheelBase") * this.get("swingArm")));
+        	return this;
         },
         getTotalGearDrive: function (gear) {
         	if (_.isString(gear) || _.isNumber(parseInt(gear))) {

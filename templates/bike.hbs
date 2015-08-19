@@ -30,27 +30,27 @@
   	<div class="fieldWrapper">
   		<label for="tirePressure">Tire Pressure (In Percent)</label>
   		<div class="rangeLabels">
-  			<span class="rangeValue leftHalf">90</span>
-  			<span class="rangeValue leftHalf">91</span>
-  			<span class="rangeValue leftHalf">92</span>
-  			<span class="rangeValue leftHalf">93</span>
-  			<span class="rangeValue leftHalf">94</span>
-  			<span class="rangeValue leftHalf">95</span>
-  			<span class="rangeValue leftHalf">96</span>
-  			<span class="rangeValue leftHalf">97</span>
-  			<span class="rangeValue leftHalf">98</span>
-  			<span class="rangeValue leftHalf">99</span>
+  			<span class="rangeValue">90</span>
+  			<span class="rangeValue">91</span>
+  			<span class="rangeValue">92</span>
+  			<span class="rangeValue">93</span>
+  			<span class="rangeValue">94</span>
+  			<span class="rangeValue">95</span>
+  			<span class="rangeValue">96</span>
+  			<span class="rangeValue">97</span>
+  			<span class="rangeValue">98</span>
+  			<span class="rangeValue">99</span>
   			<span class="rangeValue">100</span>
-  			<span class="rangeValue rightHalf">101</span>
-  			<span class="rangeValue rightHalf">102</span>
-  			<span class="rangeValue rightHalf">103</span>
-  			<span class="rangeValue rightHalf">104</span>
-  			<span class="rangeValue rightHalf">105</span>
-  			<span class="rangeValue rightHalf">106</span>
-  			<span class="rangeValue rightHalf">107</span>
-  			<span class="rangeValue rightHalf">108</span>
-  			<span class="rangeValue rightHalf">109</span>
-  			<span class="rangeValue rightHalf">110</span>
+  			<span class="rangeValue">101</span>
+  			<span class="rangeValue">102</span>
+  			<span class="rangeValue">103</span>
+  			<span class="rangeValue">104</span>
+  			<span class="rangeValue">105</span>
+  			<span class="rangeValue">106</span>
+  			<span class="rangeValue">107</span>
+  			<span class="rangeValue">108</span>
+  			<span class="rangeValue">109</span>
+  			<span class="rangeValue">110</span>
   		</div>
     	<input type="range" min="90" max="110" defaultValue="100" step="1" name="tirePressure" class="tirePressure" required="required" placeholder="Tire Pressure" value="{{tirePressure}}"/>
   	</div>
@@ -61,11 +61,11 @@
   	<div class="fieldWrapper">
   		<label for="swingArm">Swingarm Installed</label>
     	<select name="swingArm" class="swingArm" required="required">
-    		<option value="0.00" selected="selected">Stock Swingarm</option>
-    		<option value="0.03">Swingarm 1</option>
-    		<option value="0.05">Swingarm 2</option>
-    		<option value="0.06">Swingarm 3</option>
-    		<option value="0.07">Swingarm 4</option>
+    		<option value="0.00" {{#compare swingArm 0.00}}selected="selected"{{/compare}}>Stock Swingarm</option>
+    		<option value="0.03" {{#compare swingArm 0.03}}selected="selected"{{/compare}}>Swingarm 1</option>
+    		<option value="0.05" {{#compare swingArm 0.05}}selected="selected"{{/compare}}>Swingarm 2</option>
+    		<option value="0.06" {{#compare swingArm 0.06}}selected="selected"{{/compare}}>Swingarm 3</option>
+    		<option value="0.07" {{#compare swingArm 0.07}}selected="selected"{{/compare}}>Swingarm 4</option>
     	</select>
   	</div>
 </fieldset>

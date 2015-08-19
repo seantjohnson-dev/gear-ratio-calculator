@@ -1,34 +1,14 @@
 <div class="bikeSelectWrapper">
-    <fieldset>
-      <legend>Preloaded Bikes</legend>
-      <div class="fieldWrapper">
-        <label for="bikeName">Bike Name</label>
-        <select name="bikeName" class="bikeName" required="required">
-              <option value="" selected="selected">Select a Bike</option>
-              <option value="HD-XL1200">HD-XL1200</option>
-              <option value="V92SC">V92SC</option>
-              <option value="1949 Trophy">1949 Trophy</option>
-              <option value="Ninja 650">Ninja 650</option>
-              <option value="Shiver GT">Shiver GT</option>
-              <option value="Thundercat">Thundercat</option>
-              <option value="Mille">Mille</option>
-              <option value="Boxer">Boxer</option>
-              <option value="K1200S">K1200S</option>
-              <option value="Super Blackbird">Super Blackbird</option>
-              <option value="B-1125">B-1125</option>
-              <option value="Triple Nine">Triple Nine</option>
-              <option value="Slingshot">Slingshot</option>
-              <option value="Super Slingshot">Super Slingshot</option>
-              <option value="Ninja 1000R">Ninja 1000R</option>
-              <option value="Ninja 1400">Ninja 1400</option>
-              <option value="F4 1000R">F4 1000R</option>
-              <option value="Castiglioni">Castiglioni</option>
-              <option value="Busa">Busa</option>
-              <option value="YZF 1000">YZF 1000</option>
-        </select>
-      </div>
-    </fieldset>
-  </div>
-  <div class="bikeView">
-    // Form Handlebars Template will be rendered here.
-  </div>
+  <fieldset>
+    <legend>Preloaded Bikes</legend>
+    <div class="fieldWrapper">
+      <label for="bikeName">Bike Name</label>
+      <select name="bikeName" class="bikeName" required="required">
+            {{#bikeOptions}}
+                {{{text}}}
+            {{/bikeOptions}}
+      </select>
+    </div>
+  </fieldset>
+</div>
+<div class="bikeViewWrapper"></div>

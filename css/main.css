@@ -54,9 +54,13 @@ legend {
   line-height: 20px;
   padding: 3px 6px;
 }
+.fieldWrapper input[type='range'] {
+  padding-left: 0;
+  padding-right: 0;
+}
 .fieldWrapper .rangeLabels {
   border: 0;
-  padding: 0 6px;
+  padding: 0 5px;
 }
 .fieldWrapper .rangeLabels:after {
   content: "";
@@ -76,9 +80,6 @@ legend {
   width: 4.7619047619047619047619047619048%;
 }
 .fieldWrapper .rangeLabels .rangeValue:first-child {
-  text-indent: 0;
-  white-space: normal;
-  overflow: visible;
   left: -1.2380952380952380952380952380952%;
 }
 .fieldWrapper .rangeLabels .rangeValue:nth-child(2) {
@@ -108,13 +109,6 @@ legend {
 .fieldWrapper .rangeLabels .rangeValue:nth-child(10) {
   left: -0.2380952380952380952380952380952%;
 }
-
-.fieldWrapper .rangeLabels .rangeValue:nth-child(11) {
-  text-indent: 0;
-  white-space: normal;
-  overflow: visible;
-}
-
 .fieldWrapper .rangeLabels .rangeValue:nth-child(12) {
   right: -0.2380952380952380952380952380952%;
 }
@@ -143,9 +137,6 @@ legend {
   right: -1.1380952380952380952380952380952%;
 }
 .fieldWrapper .rangeLabels .rangeValue:last-child {
-  text-indent: 0;
-  white-space: normal;
-  overflow: visible;
   right: -1.2380952380952380952380952380952%;
 }
 .fieldWrapper .rangeLabels .rangeValue:after {
@@ -157,6 +148,9 @@ legend {
   height: 6px;
   background: #000;
   margin-left: -1px;
+}
+.fieldWrapper .rangeLabels .rangeValue:nth-child(11):after, .fieldWrapper .rangeLabels .rangeValue:first-child:after, .fieldWrapper .rangeLabels .rangeValue:last-child:after {
+  background: #eb000e;
 }
 .fieldWrapper select {
   height: 30px;
@@ -213,6 +207,10 @@ legend {
 }
 
 @media all and (min-width: 768px) {
+  .fieldWrapper input[type='range'] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .fieldWrapper .rangeLabels .rangeValue {
     text-align: center;
     text-indent: 0;
