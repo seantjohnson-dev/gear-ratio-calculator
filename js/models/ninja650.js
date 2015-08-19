@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.ninja650 = {
 	    defaults: {
                 name: "Ninja 650",
-                primary: 2.095,
+                primaryDrive: 2.095,
                 tireCirc: 77.15,
                 maxRPM: 12000,
                 wheelBase: 1410,
@@ -19,7 +19,7 @@
                 gear6Ratio: 0.852,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

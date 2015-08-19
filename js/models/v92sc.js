@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.v92sc = {
 	    defaults: {
                 name: "V92SC",
-                primary: 2.095,
+                primaryDrive: 2.095,
                 tireCirc: 75.67,
                 maxRPM: 6000,
                 wheelBase: 1416,
@@ -19,7 +19,7 @@
                 gear6Ratio: 0.4,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

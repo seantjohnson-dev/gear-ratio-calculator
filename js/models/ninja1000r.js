@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.ninja1000r = {
 	    defaults: {
                 name: "Ninja 1000R",
-                primary: 1.681,
+                primaryDrive: 1.681,
                 tireCirc: 79.26,
                 maxRPM: 14000,
                 wheelBase: 1389,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.348,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

@@ -2,10 +2,10 @@
 	_tc.Factory.Defaults.ninja1400 = {
 	    defaults: {
                 name: "Ninja 1400",
-                primary: 1.556,
+                primaryDrive: 1.556,
                 tireCirc: 76.91,
                 maxRPM: 11000,
-                wheelBase: 1461,
+                wheelBase: 1460.5,
                 bhp: 187,
                 weight: 473,
                 grip: 1364,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.036,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

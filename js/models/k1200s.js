@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.k1200s = {
 	    defaults: {
                 name: "K12000S",
-                primary: 1.559,
+                primaryDrive: 1.559,
                 tireCirc: 76.91,
                 maxRPM: 11000,
                 wheelBase: 1570,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.01,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

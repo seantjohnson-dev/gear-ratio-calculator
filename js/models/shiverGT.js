@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.shiverGT = {
 	    defaults: {
                 name: "Shiver GT",
-                primary: 1.75,
+                primaryDrive: 1.75,
                 tireCirc: 77.9,
                 maxRPM: 12000,
                 wheelBase: 1440,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.04,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

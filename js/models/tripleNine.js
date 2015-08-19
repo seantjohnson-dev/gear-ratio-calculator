@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.tripleNine = {
 	    defaults: {
                 name: "Triple Nine",
-                primary: 1.84,
+                primaryDrive: 1.84,
                 tireCirc: 76.91,
                 maxRPM: 11000,
                 wheelBase: 1420,
@@ -19,7 +19,7 @@
                 gear6Ratio: 0.958,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

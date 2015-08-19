@@ -5,8 +5,8 @@
     	<input type="number" min="75" max="80" step="0.001" name="tireCirc" class="tireCirc" required="required" disabled="disabled" readonly="readonly" placeholder="Tire Circumference (In Inches)" value="{{tireCirc}}"/>
   	</div>
   	<div class="fieldWrapper">
-  		<label for="primary">Primary Drive Ratio</label>
-    	<input type="number" min="1" step="0.001" name="primary" class="primary" required="required" disabled="disabled" readonly="readonly" placeholder="Primary Drive Ratio" value="{{primary}}"/>
+  		<label for="primaryDrive">Primary Drive Ratio</label>
+    	<input type="number" min="1" step="0.001" name="primaryDrive" class="primaryDrive" required="required" disabled="disabled" readonly="readonly" placeholder="Primary Drive Ratio" value="{{primaryDrive}}"/>
   	</div>
   	<div class="fieldWrapper">
   		<label for="maxRPM">Max RPM</label>
@@ -52,7 +52,7 @@
   			<span class="rangeValue">109</span>
   			<span class="rangeValue">110</span>
   		</div>
-    	<input type="range" min="90" max="110" defaultValue="100" step="1" name="tirePressure" class="tirePressure" required="required" placeholder="Tire Pressure" value="{{tirePressure}}"/>
+    	<input type="range" min="0.9" max="1.1" defaultValue="1" step="0.01" name="tirePressure" class="tirePressure" required="required" placeholder="Tire Pressure" value="{{tirePressure}}"/>
   	</div>
   	<div class="fieldWrapper">
   		<label for="grip">Tire Grip (In Newtons)</label>

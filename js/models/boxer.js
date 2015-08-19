@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.boxer = {
                 defaults: {
                         name: "Boxer",
-                        primary: 1.737,
+                        primaryDrive: 1.737,
                         tireCirc: 71.96,
                         maxRPM: 9500,
                         wheelBase: 1485,
@@ -19,7 +19,7 @@
                         gear6Ratio: 0.84,
                         nosBHP: 0,
                         nosDuration: 3.0,            
-                        tirePressure: 100,
+                        tirePressure: 1.0,
                         swingArm: 0.00
                 }
 	};

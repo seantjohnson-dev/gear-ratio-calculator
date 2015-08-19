@@ -1,6 +1,6 @@
 <div class="bikeSelectWrapper">
   <fieldset>
-    <legend>Preloaded Bikes</legend>
+    <legend>Basic Settings</legend>
     <div class="fieldWrapper">
       <label for="bikeName">Bike Name</label>
       <select name="bikeName" class="bikeName" required="required">
@@ -8,6 +8,19 @@
                 {{{text}}}
             {{/bikeOptions}}
       </select>
+    </div>
+    <div class="fieldWrapper">
+      <label for="trackDistance">Track Distance</label>
+      <select name="trackDistance" class="trackDistance" required="required">
+            <option selected="selected">Select a Track</option>
+            <option value="0.125">1/8 Mile</option>
+            <option value="0.25">1/4 Mile</option>
+            <option value="0.5">1/2 Mile</option>
+      </select>
+    </div>
+    <div class="fieldWrapper">
+      <label for="targetTime">Target Time (In Seconds)</label>
+      <input type="number" name="targetTime" class="targetTime" min="0" step="0.001" required="required" placeholder="i.e. 7.632" value="0.000"/>
     </div>
   </fieldset>
 </div>

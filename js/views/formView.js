@@ -4,6 +4,8 @@
 			templateUrl: "/templates/form.hbs",
 			dependentSelector: ".bikeDependent",
 			bikeSelector: ".bikeName",
+			trackSelector: ".trackDistance",
+			timeSelector: ".targetTime",
 			bikeViewWrapperSelector: ".bikeViewWrapper",
 			localStorageVarName: "customModels"
 		},
@@ -12,7 +14,9 @@
 		childViews: {},
 		events: function () {
 			var evts = {};
-			evts["change " + this.options.bikeSelector] = "onBikeChange";
+			evts["change " + this.options.bikeSelector] = "onFieldChange";
+			evts["change " + this.options.trackSelector] = "onFieldChange";
+			evts["change " + this.options.timeSelector] = "onFieldChange";
 			return _.extend(_tc.Factory.Views.baseView.prototype.events.apply(this, arguments), evts);
 		},
 		initialize: function (options) {
@@ -49,9 +53,11 @@
 			}));
 			return this;
 		},
-		onBikeChange: function (e) {
-	        var bikeName = $(e.currentTarget).find("option:selected").val();
-	        if (bikeName !== "") {
+		onFieldChange: function (e) {
+	        var bikeName = this.$(this.options.bikeSelector).find("option:selected").val();
+	        var distance = this.$(this.options.trackSelector).find("option:selected").val();
+	        var time = this.$(this.options.timeSelector).val();
+	        if (bikeName !== "" && distance !== "" && time > 0) {
 	        	if (!this.childViews[bikeName]) {
 	        		var model = this.collection.findWhere({name: bikeName});
 	            	this.childViews[bikeName] = new _tc.Factory.Views.bikeView({model: model});

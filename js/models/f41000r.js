@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.f41000r = {
 	    defaults: {
                 name: "F4 1000R",
-                primary:  1.7083,
+                primaryDrive:  1.7083,
                 tireCirc: 79.26,
                 maxRPM: 13500,
                 wheelBase: 1430,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.21,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

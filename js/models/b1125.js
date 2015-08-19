@@ -2,7 +2,7 @@
         _tc.Factory.Defaults.b1125 = {
                 defaults: {
                         name: "B-1125",
-                        primary: 1.8055,
+                        primaryDrive: 1.8055,
                         tireCirc: 77.9,
                         maxRPM: 10500,
                         wheelBase: 1384,
@@ -19,7 +19,7 @@
                         gear6Ratio: 0.96,
                         nosBHP: 0,
                         nosDuration: 3.0,            
-                        tirePressure: 100,
+                        tirePressure: 1.0,
                         swingArm: 0.00  
                 }
         };

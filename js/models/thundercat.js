@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.thundercat = {
 	    defaults: {
                 name: "Thundercat",
-                primary: 1.708,
+                primaryDrive: 1.708,
                 tireCirc: 77.15,
                 maxRPM: 15000,
                 wheelBase: 1415,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.074,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

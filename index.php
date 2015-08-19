@@ -20,6 +20,7 @@
 				echo "_tc.Templates = " . json_encode($templates);
 			?>
 		</script>
+		<script src="js/models/tuner.js"></script>
 		<script src="js/models/hdxl1200.js"></script>
 		<script src="js/models/v92sc.js"></script>
 		<script src="js/models/trophy1949.js"></script>

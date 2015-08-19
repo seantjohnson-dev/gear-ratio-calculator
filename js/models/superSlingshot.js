@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.superSlingshot = {
 	    defaults: {
                 name: "Super Slingshot",
-                primary: 1.617,
+                primaryDrive: 1.617,
                 tireCirc: 76.91,
                 maxRPM: 13500,
                 wheelBase: 1415,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.269,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

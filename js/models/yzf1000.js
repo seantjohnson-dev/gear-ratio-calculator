@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.yzf1000 = {
 	    defaults: {
                 name: "YZF 1000",
-                primary: 1.512,
+                primaryDrive: 1.512,
                 tireCirc: 79.26,
                 maxRPM: 14000,
                 wheelBase: 1415,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.269,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

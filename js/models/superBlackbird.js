@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.superBlackbird = {
 	    defaults: {
                 name: "Super Blackbird",
-                primary: 1.571,
+                primaryDrive: 1.571,
                 tireCirc: 77.9,
                 maxRPM: 11000,
                 wheelBase: 1490,
@@ -19,7 +19,7 @@
                 gear6Ratio: 1.042,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

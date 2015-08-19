@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.mille = {
 	    defaults: {
                 name: "Mille",
-                primary: 1.9354,
+                primaryDrive: 1.9354,
                 tireCirc: 76.91,
                 maxRPM: 12000,
                 wheelBase: 1418,
@@ -19,7 +19,7 @@
                 gear6Ratio: 0.88,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

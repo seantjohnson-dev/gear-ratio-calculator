@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.hdxl1200 = {
 		defaults: {
 			name: "HD-XL1200",
-		    primary: 2.095,
+		    primaryDrive: 2.095,
 		    tireCirc: 79.95,
 		    maxRPM: 6000,
 		    wheelBase: 1524,
@@ -19,7 +19,7 @@
 		    gear6Ratio: 0.4,
 	        nosBHP: 0,
 	        nosDuration: 3.0,            
-	        tirePressure: 100,
+	        tirePressure: 1.0,
 	        swingArm: 0.00
 		}
 	};

@@ -2,7 +2,7 @@
 	 _tc.Factory.Defaults.castiglioni = $.extend(true, {}, _tc.Factory.Defaults.f41000r, {
     	defaults: $.extend({}, _tc.Factory.Defaults.f41000r.defaults, {
             name: "Castiglioni",
-            primary: 1.58,
+            primaryDrive: 1.58,
             bhp: 197,
             weight: 412,
             grip: 1241,

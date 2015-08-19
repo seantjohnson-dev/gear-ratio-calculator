@@ -2,7 +2,7 @@
 	_tc.Factory.Defaults.trophy1949 = {
 	    defaults: {
                 name: "1949 Trophy",
-                primary: 2.784,
+                primaryDrive: 2.784,
                 tireCirc: 84.823,
                 maxRPM: 7000,
                 wheelBase: 1615,
@@ -19,7 +19,7 @@
                 gear6Ratio: 0.4,
                 nosBHP: 0,
                 nosDuration: 3.0,            
-                tirePressure: 100,
+                tirePressure: 1.0,
                 swingArm: 0.00
             }
 	};

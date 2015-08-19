@@ -154,6 +154,7 @@ legend {
 }
 .fieldWrapper select {
   height: 30px;
+  padding: 3px 1px;
 }
 .fieldWrapper .disableInputButton {
   display: block;
@@ -195,12 +196,12 @@ legend {
   -moz-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg);
 }
-.fieldWrapper .disableInputButton.disabled:before {
+.fieldWrapper.disabled .disableInputButton:before {
   -webkit-transform: rotateZ(90deg);
   -moz-transform: rotateZ(90deg);
   transform: rotateZ(90deg);
 }
-.fieldWrapper .disableInputButton.disabled:after {
+.fieldWrapper.disabled .disableInputButton:after {
   -webkit-transform: rotateZ(0);
   -moz-transform: rotateZ(0);
   transform: rotateZ(0);

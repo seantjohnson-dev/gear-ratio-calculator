@@ -4,7 +4,8 @@
 		tagName: "div",
 		options: {
 			disabledInputClass: "disabled",
-			disableInputButtonSelector: ".disableInputButton"
+			disableInputButtonSelector: ".disableInputButton",
+			fieldWrapperSelector: ".fieldWrapper"
 		},
 		inputs: [
 			{
@@ -14,8 +15,8 @@
 			},
 			{
 				type: "number",
-				selector: ".primary",
-				modelField: "primary"
+				selector: ".primaryDrive",
+				modelField: "primaryDrive"
 			},
 			{
 				label: "Max RPM",
@@ -115,7 +116,7 @@
 		},
 		initialize: function (options) {
 			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
-			_tc.on(_tc.EventNames.ModelRecalculated, this.proxy(this.onModelRecalculated));
+			_tc.on(_tc.EventNames.onModelReCalc, this.proxy(this.onModelReCalc));
 		},
 		onFieldChange: function (e) {
 			var $input = $(e.currentTarget);
@@ -137,11 +138,8 @@
             			break;
 					}
 					this.model.set(input.modelField, val);
-					_tc.trigger(_tc.EventNames.FieldChanged, {
-						model: this.model,
-						field: input.modelField,
-						value: val
-					});
+					this.model.reCalc();
+					this.render();
 				}
 			}));
 		},
@@ -149,20 +147,14 @@
 			e.preventDefault();
 			var $this = $(e.currentTarget),
 			$input = $(e.currentTarget).siblings('input');
-			if ($this.hasClass(this.options.disabledInputClass)) {
+			if ($this.parents(this.options.fieldWrapperSelector).hasClass(this.options.disabledInputClass)) {
 	            $input.prop('disabled', false).prop('readonly', false);
 	            $this.attr("title", "Disable Gear");
 	        } else {
 	            $input.prop('disabled', true).prop('readonly', true);
 	            $this.attr("title", "Enable Gear");
 	        }
-	        $this.toggleClass(this.options.disabledInputClass);
-		},
-		onModelRecalculated: function (model) {
-			if (this.model.cid == model.cid) {
-				this.render();
-			}
-			return this;
+	        $this.parents(this.options.fieldWrapperSelector).toggleClass(this.options.disabledInputClass);
 		}
 	});
 })(jQuery, window);
