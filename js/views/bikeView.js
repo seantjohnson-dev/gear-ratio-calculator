@@ -10,6 +10,21 @@
 		inputs: [
 			{
 				type: "number",
+				selector: ".tireWidth",
+				modelField: "tireWidth"
+			},
+			{
+				type: "number",
+				selector: ".aspectRatio",
+				modelField: "aspectRatio"
+			},
+			{
+				type: "number",
+				selector: ".rimSize",
+				modelField: "rimSize"
+			},
+			{
+				type: "number",
 				selector: ".tireCirc",
 				modelField: "tireCirc"
 			},
@@ -19,10 +34,24 @@
 				modelField: "primaryDrive"
 			},
 			{
-				label: "Max RPM",
 				type: "number",
-				selector: ".maxRPM",
-				modelField: "maxRPM"
+				selector: ".maxPowerRPM",
+				modelField: "maxPowerRPM"
+			},
+			{
+				type: "number",
+				selector: ".maxTorqueRPM",
+				modelField: "maxTorqueRPM"
+			},
+			{
+				type: "number",
+				selector: ".maxTorque",
+				modelField: "maxTorque"
+			},
+			{
+				type: "number",
+				selector: ".redlineRPM",
+				modelField: "redlineRPM"
 			},
 			{
 				type: "number",
@@ -116,7 +145,7 @@
 		},
 		initialize: function (options) {
 			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
-			_tc.on(_tc.EventNames.onModelReCalc, this.proxy(this.onModelReCalc));
+			_tc.trigger(_tc.EventNames.ModelReCalc, this.model);
 		},
 		onFieldChange: function (e) {
 			var $input = $(e.currentTarget);
@@ -138,7 +167,7 @@
             			break;
 					}
 					this.model.set(input.modelField, val);
-					this.model.reCalc();
+					_tc.trigger(_tc.EventNames.ModelReCalc, this.model);
 					this.render();
 				}
 			}));

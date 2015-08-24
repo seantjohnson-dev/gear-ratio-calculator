@@ -40,18 +40,49 @@
 		}
 	});
 
+    function getNewTimeStamp() {
+        return {
+            velocity: {
+                gear1: [],
+                gear2: [],
+                gear3: [],
+                gear4: [],
+                gear5: [],
+                gear6: []
+            },
+            acceleration: {
+                gear1: [],
+                gear2: [],
+                gear3: [],
+                gear4: [],
+                gear5: [],
+                gear6: []
+            },
+            displacement: {
+                gear1: [],
+                gear2: [],
+                gear3: [],
+                gear4: [],
+                gear5: [],
+                gear6: []
+            }
+        };
+    }
+
 	_tc.Factory.Models.baseModel = Backbone.Model.extend({
         proxy: _tc.Utils.proxy,
+        timeStamps: [],
         utils: {
             constants: {
                 newtonsInPound: 4.44822162,
                 inchesInFoot: 12,
                 totalGears: 6,
-                torqueToHP: 5252,
+                torqueHPConstant: 5252,
                 gearRatioMin: 0.4,
                 gearRatioMax: 5.0,
-                gravityInMeters: 9.80665
+                gravityInMeters: 9.80665,
                 gravityInFeet: 32.17404856,
+                kilogramsInSlug: 14.5939029,
                 feetInMile: 5280,
                 feetInMeter: 3.28084,
                 kilometersInMile: 1.60934,
@@ -64,9 +95,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "pounds") {
-                    return val / this.utils.constants.newtonsInPound;
+                    return val / this.constants.newtonsInPound;
                 } else if (convertTo.toLowerCase() == "newtons") {
-                    return val * this.utils.constants.newtonsInPound;
+                    return val * this.constants.newtonsInPound;
                 }
                 return false;
             },
@@ -74,9 +105,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "millimeters") {
-                    val * this.utils.constants.millimetersInInch;
+                    val * this.constants.millimetersInInch;
                 } else if (convertTo.toLowerCase() == "inches") {
-                    val / this.utils.constants.millimetersInInch;
+                    val / this.constants.millimetersInInch;
                 }
                 return false;
             },
@@ -84,9 +115,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "feet") {
-                    return val / this.utils.constants.inchesInFoot;
+                    return val / this.constants.inchesInFoot;
                 } else if (convertTo.toLowerCase() == "inches") {
-                    return val * this.utils.constants.inchesInFoot;
+                    return val * this.constants.inchesInFoot;
                 }
                 return false;
             },
@@ -94,9 +125,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "miles") {
-                    return this.inchesFeet(val, "feet") / this.utils.constants.feetInMile;
+                    return this.inchesFeet(val, "feet") / this.constants.feetInMile;
                 } else if (convertTo.toLowerCase() == "inches") {
-                    return val * this.utils.constants.feetInMile * this.utils.constants.inchesInFoot;
+                    return val * this.constants.feetInMile * this.constants.inchesInFoot;
                 }
                 return false;
             },
@@ -104,9 +135,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "seconds") {
-                    return val * this.utils.constants.secondsInMinute;
+                    return val * this.constants.secondsInMinute;
                 } else if (convertTo.toLowerCase() == "minutes") {
-                    return val / this.utils.constants.secondsInMinute;
+                    return val / this.constants.secondsInMinute;
                 }
                 return false;
             },
@@ -114,9 +145,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "seconds") {
-                    return val * this.utils.constants.secondsInHour;
+                    return val * this.constants.secondsInHour;
                 } else if (convertTo.toLowerCase() == "hours") {
-                    return val / this.utils.constants.secondsInHour;
+                    return val / this.constants.secondsInHour;
                 }
                 return false;
             },
@@ -124,9 +155,9 @@
                 if (!_.isNumber(val) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "minutes") {
-                    return val * this.utils.constants.minutesInHour;
+                    return val * this.constants.minutesInHour;
                 } else if (convertTo.toLowerCase() == "hours") {
-                    return val / this.utils.constants.minutesInHour;
+                    return val / this.constants.minutesInHour;
                 }
                 return false;
             },
@@ -134,60 +165,77 @@
                 if (!_.isNumber(val) || !_.isNumber(rpm) || !convertTo) {
                     return false;
                 } else if (convertTo.toLowerCase() == "torque") {
-                    return val * this.utils.constants.torqueToHP / rpm;
+                    return val * this.constants.torqueHPConstant / rpm;
                 } else if (convertTo.toLowerCase() == "horsepower") {
-                    return val * rpm / this.utils.constants.torqueToHP;
+                    return val * rpm / this.constants.torqueHPConstant;
+                }
+                return false;
+            },
+            kilogramsSlugs: function (val, convertTo) {
+                if (!_.isNumber(val) || !convertTo) {
+                    return false;
+                } else if (convertTo.toLowerCase() == "kilograms") {
+                    return val * this.constants.kilogramsInSlug;
+                } else if (convertTo.toLowerCase() == "slugs") {
+                    return val / this.constants.kilogramsInSlug;
                 }
                 return false;
             },
             getTorqueAtRPM: function (val, rpm) {
-                return this.utils.torqueHP(val, rpm, "torque");
+                return this.torqueHP(val, rpm, "torque");
             },
             getHPAtRPM: function (val, rpm) {
-                return this.utils.torqueHP(val, rpm, "horsepower");
+                return this.torqueHP(val, rpm, "horsepower");
             },
             getTireCircInMiles: function (val) {
-                return this.utils.inchesMiles(val, "miles");
+                return this.inchesMiles(val, "miles");
             },
             getTireCircInFeet: function (val) {
-                return this.utils.inchesFeet(val, "feet");
+                return this.inchesFeet(val, "feet");
             },
             getRevsPerSecond: function (val) {
-                return this.utils.secondsMinutes(val, "seconds");
+                return this.secondsMinutes(val, "seconds");
             },
             getRevsPerHour: function (val) {
-                return this.utils.minutesHours(val, "hours");
+                return this.minutesHours(val, "hours");
             },
             getWeightInNewtons: function (val) {
-                return this.utils.poundsNewtons(val, "newtons");
+                return this.poundsNewtons(val, "newtons");
             },
             getGripInPounds: function (val) {
-                return this.utils.poundsNewtons(val, "pounds");
+                return thispoundsNewtons(val, "pounds");
             },
             getInstantVelocity: function (rpm, gear) {
-                return (rpm * this.utils.constants.minutesInHour / this.get("gear" + gear + "Overall")) * this.utils.getTireCircInMiles(this.get("tireCirc"));
+                return (rpm * this.constants.minutesInHour / this.get("gear" + gear + "Overall")) * this.getTireCircInMiles(this.get("tireCirc"));
             },
             getInstantVelocityInKPH: function (rpm, gear) {
-                return this.utils.getInstantVelocity(rpm, gear) * this.utils.constants.kilometersInMile;
+                return this.getInstantVelocity(rpm, gear) * this.constants.kilometersInMile;
             },
             getInstantVelocityInFPS: function (rpm, gear) {
-                return this.getInstantVelocity(rpm, gear) * this.utils.constants.feetInMile / this.utils.constants.secondsInHour;
+                return this.getInstantVelocity(rpm, gear) * this.constants.feetInMile / this.constants.secondsInHour;
             },
             getInstantVelocityInMPS: function (rpm, gear) {
-                return this.utils.getInstantVelocityInKPS(rpm, gear) * 1000;
+                return this.getInstantVelocityInKPS(rpm, gear) * 1000;
             }
         },
         initialize: function (attrs, options) {
         	this.options = $.extend(true, this.options, options);
+            _tc.on(_tc.EventNames.ModelReCalc, this.proxy(this.reCalc));
         },
-        reCalc: function () {
-            this.calcGrip().calcWheelBase().calcFinalDrive();
-            for (var g = 1, l = this.utils.constants.totalGears; g <= l; g++) {
-                this.calcGearOverall(g);
+        reCalc: function (model) {
+            if (this.cid == model.cid) {
+                this.calcTireGrip().calcWheelBase().calcFinalDrive().calcTireCirc().calcMaxTorque();
+                for (var g = 1, l = this.utils.constants.totalGears; g <= l; g++) {
+                    this.calcGearOverall(g);
+                }
             }
         	return this;
         },
-        calcGrip: function () {
+        calcTireCirc: function () {
+            this.set("tireCirc", (this.utils.inchesMillimeters(this.get("tireWidth"), "inches")) * (this.get("aspectRatio") / 100) + (this.get("rimSize") / 2)) * 2 * Math.PI;
+            return this;
+        },
+        calcTireGrip: function () {
         	this.set("grip", Math.round((this.attributes.defaults.grip / (this.attributes.defaults.weight * this.utils.constants.newtonsInPound)) * (this.get("weight") * this.utils.constants.newtonsInPound) / this.get("tirePressure")));
         	return this;
         },
@@ -204,6 +252,14 @@
         		this.set("gear" + gear + "Overall", (this.get("primaryDrive") * this.get("finalDrive") * this.get("gear" + gear + "Ratio")));
         	}
         	return this;
+        },
+        calcMaxTorque: function () {
+            this.set("maxTorque", this.get("bhp") * this.utils.constants.torqueHPConstant / this.get("maxTorqueRPM"));
+            return this;
+        },
+        calcWheelTorqueAtGear: function (gear) {
+            this.set("maxWheelTorque", this.calcMaxTorque() / this.calcGearOverall(gear));
+            return this;
         }
     });
 

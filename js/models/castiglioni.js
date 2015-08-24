@@ -3,6 +3,8 @@
     	defaults: $.extend({}, _tc.Factory.Defaults.f41000r.defaults, {
             name: "Castiglioni",
             primaryDrive: 1.58,
+            maxPowerRPM: 12200,
+            maxTorqueRPM: 9000,
             bhp: 197,
             weight: 412,
             grip: 1241,

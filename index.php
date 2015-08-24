@@ -20,7 +20,6 @@
 				echo "_tc.Templates = " . json_encode($templates);
 			?>
 		</script>
-		<script src="js/models/tuner.js"></script>
 		<script src="js/models/hdxl1200.js"></script>
 		<script src="js/models/v92sc.js"></script>
 		<script src="js/models/trophy1949.js"></script>
@@ -49,8 +48,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		<form id="bikeCalc" class="formView">
-  			//Form View Should be rendered here
-		</form>
+		<form id="bikeCalc" class="formView"></form>
 	</body>
 </html>

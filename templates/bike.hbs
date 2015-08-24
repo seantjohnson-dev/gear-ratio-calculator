@@ -1,16 +1,40 @@
 <fieldset class="bikeDependent">
 	<legend>Bike Constants</legend>
-	<div class="fieldWrapper">
-		<label for="tireCirc">Tire Circumference (In Inches)</label>
-    	<input type="number" min="75" max="80" step="0.001" name="tireCirc" class="tireCirc" required="required" disabled="disabled" readonly="readonly" placeholder="Tire Circumference (In Inches)" value="{{tireCirc}}"/>
+  <div class="fieldWrapper">
+      <label for="tireWidth">Rear Tire Width (In Millimeters)</label>
+      <input type="number" min="0" step="1" name="tireWidth" class="tireWidth" required="required" disabled="disabled" readonly="readonly" placeholder="Rear Tire Width (In Millimeters)" value="{{tireWidth}}"/>
+    </div>
+    <div class="fieldWrapper">
+      <label for="aspectRatio">Rear Tire Aspect Ratio</label>
+      <input type="number" min="0" step="1" name="aspectRatio" class="aspectRatio" required="required" disabled="disabled" readonly="readonly" placeholder="Rear Tire Aspect Ratio" value="{{aspectRatio}}"/>
+    </div>
+    <div class="fieldWrapper">
+      <label for="rimSize">Rear Tire Rim Size (In Inches)</label>
+      <input type="number" min="0" step="1" name="rimSize" class="rimSize" required="required" disabled="disabled" readonly="readonly" placeholder="Rear Tire Rim Size (In Inches)" value="{{rimSize}}"/>
+    </div>
+    <div class="fieldWrapper">
+		  <label for="tireCirc">Rear Tire Circumference (In Inches)</label>
+    	<input type="number" min="0" step="0.001" name="tireCirc" class="tireCirc" required="required" disabled="disabled" readonly="readonly" placeholder="Rear Tire Circumference (In Inches)" value="{{tireCirc}}"/>
   	</div>
   	<div class="fieldWrapper">
   		<label for="primaryDrive">Primary Drive Ratio</label>
-    	<input type="number" min="1" step="0.001" name="primaryDrive" class="primaryDrive" required="required" disabled="disabled" readonly="readonly" placeholder="Primary Drive Ratio" value="{{primaryDrive}}"/>
+    	<input type="number" min="0" step="0.001" name="primaryDrive" class="primaryDrive" required="required" disabled="disabled" readonly="readonly" placeholder="Primary Drive Ratio" value="{{primaryDrive}}"/>
   	</div>
+    <div class="fieldWrapper">
+      <label for="maxPowerRPM">Max Power RPM</label>
+      <input type="number" min="0" step="1" name="maxPowerRPM" class="maxPowerRPM" required="required" disabled="disabled" readonly="readonly" placeholder="Max Power RPM" value="{{maxPowerRPM}}"/>
+    </div>
+    <div class="fieldWrapper">
+      <label for="maxTorqueRPM">Max Torque RPM</label>
+      <input type="number" min="0" step="1" name="maxTorqueRPM" class="maxTorqueRPM" required="required" disabled="disabled" readonly="readonly" placeholder="Max Torque RPM" value="{{maxTorqueRPM}}"/>
+    </div>
+    <div class="fieldWrapper">
+      <label for="maxTorque">Max Torque (in ft/lbs)</label>
+      <input type="number" min="0" step="1" name="maxTorque" class="maxTorque" required="required" disabled="disabled" readonly="readonly" placeholder="Max Torque (in ft/lbs)" value="{{maxTorque}}"/>
+    </div>
   	<div class="fieldWrapper">
-  		<label for="maxRPM">Max RPM</label>
-    	<input type="number" min="4000" max="16000" step="500" name="maxRPM" class="maxRPM" required="required" disabled="disabled" readonly="readonly" placeholder="Max RPM" value="{{maxRPM}}"/>
+  		<label for="redlineRPM">Redline RPM</label>
+    	<input type="number" min="0" step="1" name="redlineRPM" class="redlineRPM" required="required" disabled="disabled" readonly="readonly" placeholder="Redline RPM" value="{{redlineRPM}}"/>
   	</div>
   	<div class="fieldWrapper">
   		<label for="wheelBase">Wheel Base (In Millimeters)</label>

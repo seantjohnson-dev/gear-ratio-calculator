@@ -1,7 +1,6 @@
 ;(function ($, win) {
 	_tc.Factory.Views.formView = _tc.Factory.Views.baseView.extend({
 		options: {
-			templateUrl: "/templates/form.hbs",
 			dependentSelector: ".bikeDependent",
 			bikeSelector: ".bikeName",
 			trackSelector: ".trackDistance",
@@ -55,9 +54,9 @@
 		},
 		onFieldChange: function (e) {
 	        var bikeName = this.$(this.options.bikeSelector).find("option:selected").val();
-	        var distance = this.$(this.options.trackSelector).find("option:selected").val();
+	        var displacement = this.$(this.options.trackSelector).find("option:selected").val();
 	        var time = this.$(this.options.timeSelector).val();
-	        if (bikeName !== "" && distance !== "" && time > 0) {
+	        if (bikeName !== "" && displacement !== "" && time > 0) {
 	        	if (!this.childViews[bikeName]) {
 	        		var model = this.collection.findWhere({name: bikeName});
 	            	this.childViews[bikeName] = new _tc.Factory.Views.bikeView({model: model});
