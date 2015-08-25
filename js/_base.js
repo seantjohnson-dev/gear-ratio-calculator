@@ -224,7 +224,11 @@
         },
         reCalc: function (model) {
             if (this.cid == model.cid) {
-                this.calcTireGrip().calcWheelBase().calcFinalDrive().calcTireCirc().calcMaxTorque();
+                this.calcTireGrip()
+                .calcWheelBase()
+                .calcFinalDrive()
+                .calcTireCirc()
+                .calcEngineTorque();
                 for (var g = 1, l = this.utils.constants.totalGears; g <= l; g++) {
                     this.calcGearOverall(g);
                 }
@@ -253,12 +257,20 @@
         	}
         	return this;
         },
-        calcMaxTorque: function () {
+        calcEngineTorque: function () {
             this.set("maxTorque", this.get("bhp") * this.utils.constants.torqueHPConstant / this.get("maxTorqueRPM"));
             return this;
         },
-        calcWheelTorqueAtGear: function (gear) {
-            this.set("maxWheelTorque", this.calcMaxTorque() / this.calcGearOverall(gear));
+        calcWheelTorque: function (gear) {
+            this.set("maxWheelTorque", this.calcEngineTorque() / this.calcGearOverall(gear));
+            return this;
+        },
+        calcTorqueAtMaxPower: function () {
+            this.set("torqueAtMaxPower", this.get("bhp") * this.utils.constants.torqueHPConstant / this.get("maxPowerRPM"));
+            return this;
+        },
+        calcPowerAtMaxTorque: function (){
+            this.set("powerAtMaxTorque", this.get("bhp") * this.utils.constants.torqueHPConstant / this.get("maxPowerRPM"));
             return this;
         }
     });

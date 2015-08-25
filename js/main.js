@@ -20,4 +20,10 @@ $(function () {
     var formView = new _tc.Factory.Views.formView({
     	el: $(".formView")
     });
+
+    var maxRPM = 15000;
+    var bhp = 139.5;
+    for (var rpm = 1; rpm <= maxRPM; rpm++) {
+    	console.log("Torque: " + (bhp * 5252 / rpm), "RPM: " + rpm);
+    }
 });
