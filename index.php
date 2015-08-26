@@ -10,12 +10,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
 		<script src="js/_base.js"></script>
 		<script>
 			<?php
 				$templates = array(
-					"formView" => file_get_contents("templates/form.hbs"),
-					"bikeView" => file_get_contents("templates/bike.hbs")
+					"bikeFormView" => file_get_contents("templates/bikeForm.hbs"),
+					"bikeFormFieldsView" => file_get_contents("templates/bikeFormFields.hbs")
 				);
 				echo "_tc.Templates = " . json_encode($templates);
 			?>
@@ -41,13 +42,13 @@
 		<script src="js/models/busa.js"></script>
 		<script src="js/models/yzf1000.js"></script>
 
-		<script src="js/views/bikeView.js"></script>
-		<script src="js/views/formView.js"></script>
+		<script src="js/views/bikeFormFieldsView.js"></script>
+		<script src="js/views/bikeFormView.js"></script>
 
 		<script src="js/main.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		<form id="bikeCalc" class="formView"></form>
+		<form id="bikeCalc" class="bikeFormView"></form>
 	</body>
 </html>

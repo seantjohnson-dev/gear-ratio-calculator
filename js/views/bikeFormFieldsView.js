@@ -1,6 +1,6 @@
 ;(function ($, win) {
-	_tc.Factory.Views.bikeView = _tc.Factory.Views.baseView.extend({
-		className: "bikeView",
+	_tc.Factory.Views.bikeFormFieldsView = _tc.Factory.Views.baseView.extend({
+		className: "bikeFormFieldsView",
 		tagName: "div",
 		options: {
 			disabledInputClass: "disabled",
@@ -135,7 +135,7 @@
 				modelField: "gear6Ratio"
 			}
 		],
-		template: Handlebars.compile(_tc.Templates.bikeView),
+		template: Handlebars.compile(_tc.Templates.bikeFormFieldsView),
 		events: function () {
 			var evts = {};
 			evts["change input"] = "onFieldChange";

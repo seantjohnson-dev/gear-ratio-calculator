@@ -1,15 +1,15 @@
 ;(function ($, win) {
-	_tc.Factory.Views.formView = _tc.Factory.Views.baseView.extend({
+	_tc.Factory.Views.bikeFormView = _tc.Factory.Views.baseView.extend({
 		options: {
 			dependentSelector: ".bikeDependent",
 			bikeSelector: ".bikeName",
 			trackSelector: ".trackDistance",
 			timeSelector: ".targetTime",
-			bikeViewWrapperSelector: ".bikeViewWrapper",
+			bikeFormFieldsViewWrapperSelector: ".bikeFormFieldsViewWrapper",
 			localStorageVarName: "customModels"
 		},
 		model: new Backbone.Model({bikeOptions: []}),
-		template: Handlebars.compile(_tc.Templates.formView),
+		template: Handlebars.compile(_tc.Templates.bikeFormView),
 		childViews: {},
 		events: function () {
 			var evts = {};
@@ -59,10 +59,10 @@
 	        if (bikeName !== "" && displacement !== "" && time > 0) {
 	        	if (!this.childViews[bikeName]) {
 	        		var model = this.collection.findWhere({name: bikeName});
-	            	this.childViews[bikeName] = new _tc.Factory.Views.bikeView({model: model});
+	            	this.childViews[bikeName] = new _tc.Factory.Views.bikeFormFieldsView({model: model});
 	        	}
-	            this.$bikeViewWrapper = this.$(this.options.bikeViewWrapperSelector);
-	            this.$bikeViewWrapper.html(this.childViews[bikeName].render().el);
+	            this.$bikeFormFieldsViewWrapper = this.$(this.options.bikeFormFieldsViewWrapperSelector);
+	            this.$bikeFormFieldsViewWrapper.html(this.childViews[bikeName].render().el);
 	        }
 		},
 		getCustomModels: function () {

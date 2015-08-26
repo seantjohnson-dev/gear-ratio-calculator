@@ -1,0 +1,30 @@
+<section id="bikeCollectionView" class="bikeCollectionView">
+	<nav class="bikeCollectionNav">
+		{{#models}}
+			<button class="bikeModelWrapper">
+				<div class="bikeModelContentModel">
+					<img class="bikeImage" src="{{image}}" alt="{{name}}"/>
+					<div class="bikeFormWrapper">
+						<form action="" class="bikeForm">
+							<fieldset class="bikeFieldsetWrapper">
+								<div class="bikeFieldWrapper">
+									<label for="nosBHP">NOS BHP</label>
+									<input class="nosBHP bikeField" type="number" name="nosBHP" placeholder="NOS BHP"/>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="bikeModelSpecsWrapper">
+						{{#specs}}
+							<div class="bikeModelSpecWrapper">
+								<h4 class="specName">{{name}}</h4>
+								<p class="specValue">{{value}}</p>
+								<p clas="specUnit">{{unit}}</p>
+							</div>
+						{{/specs}}
+					</div>
+				</div>
+			</button>
+		{{/models}}
+	</nav>
+</section>

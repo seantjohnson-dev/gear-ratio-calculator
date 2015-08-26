@@ -40,35 +40,6 @@
 		}
 	});
 
-    function getNewTimeStamp() {
-        return {
-            velocity: {
-                gear1: [],
-                gear2: [],
-                gear3: [],
-                gear4: [],
-                gear5: [],
-                gear6: []
-            },
-            acceleration: {
-                gear1: [],
-                gear2: [],
-                gear3: [],
-                gear4: [],
-                gear5: [],
-                gear6: []
-            },
-            displacement: {
-                gear1: [],
-                gear2: [],
-                gear3: [],
-                gear4: [],
-                gear5: [],
-                gear6: []
-            }
-        };
-    }
-
 	_tc.Factory.Models.baseModel = Backbone.Model.extend({
         proxy: _tc.Utils.proxy,
         timeStamps: [],
