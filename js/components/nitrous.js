@@ -1,16 +1,15 @@
 (function ($, win) {
-	_tc.Factory.Components.Nitrous = function (options) {
-		var obj = {
+	_tc.Factory.Components.Nitrous = Backbone.View.extend({
+        defaults: {
             name: "Nitrous",
+            value: 0,
             duration: {
                 value: 3.0,
                 unit: "s"
-            },
-            power: {
-                value: 0,
-                unit: "hp"
             }
-        };
-		return $.extend(true, {}, obj, options);
-	}
+        },
+        initialize: function (options) {
+            this.options = $.extend(true, {}, this.defaults, options);
+        }
+    });
 })(jQuery, window);

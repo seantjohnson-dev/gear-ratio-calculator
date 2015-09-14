@@ -1,10 +1,12 @@
 (function ($, win) {
-	_tc.Factory.Components.Image = function (options) {
-		var obj = {
+	_tc.Factory.Components.Image = Backbone.View.extend({
+		defaults: {
 			src: "/img/default.jpg",
-			width: 500,
-			height: 250
-		};
-		return $.extend(true, {}, obj, options);
-	}
+			width: 313,
+			height: 168
+		},
+		initialize: function (options) {
+			this.options = $.extend(true, {}, this.defaults, options);
+		}
+	});
 })(jQuery, window);

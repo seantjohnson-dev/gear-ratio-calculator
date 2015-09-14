@@ -28,5 +28,5 @@
                 swingArm: 0.00
             }
 	};
-	_tc.bikes.push(new _tc.Factory.Models.baseModel($.extend({}, _tc.Factory.Defaults.shiverGT, _tc.Factory.Defaults.shiverGT.defaults)));
+	_tc.bikes.push(new _tc.Factory.Models.BaseBike($.extend({}, _tc.Factory.Defaults.shiverGT, _tc.Factory.Defaults.shiverGT.defaults)));
 })(jQuery, window);

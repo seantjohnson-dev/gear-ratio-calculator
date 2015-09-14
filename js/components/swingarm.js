@@ -1,36 +1,41 @@
 (function ($, win) {
-	_tc.Factory.Components.Swingarm = function (options) {
-		var choices = [
+    var choices = [
         {
-            name: "Stock Swingarm",
+            name: "Stock SwingArm",
             upgrade: 0,
             value: 0.00
         },
         {
-            name: "Swingarm Level 1",
+            name: "SwingArm Level 1",
             upgrade: 1,
             value: 0.03
         },
         {
-            name: "Swingarm Level 2",
+            name: "SwingArm Level 2",
             upgrade: 2,
             value: 0.05
         },
         {
-            name: "Swingarm Level 3",
+            name: "SwingArm Level 3",
             upgrade: 3,
             value: 0.06
         },
         {
-            name: "Swingarm Level 4",
+            name: "SwingArm Level 4",
             upgrade: 4,
             value: 0.07
         }
     ];
-		var obj = {
-				value: 0.00,
-        unit: "%"
-    };
-    return $.extend(true, {}, obj, choices[options]);
-	}
+    _tc.Factory.Components.SwingArm = Backbone.View.extend({
+        defaults: {
+            value: 0.00,
+            unit: "%"
+        },
+        initialize: function (options) {
+            this.options = $.extend(true, {}, this.defaults, options);
+        },
+        getChoices: function () {
+            return choices;
+        }
+    });
 })(jQuery, window);

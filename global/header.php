@@ -22,6 +22,24 @@
 				echo "_tc.Templates = " . json_encode($templates);
 			?>
 		</script>
+		<script src="js/components/baseComponent.js"></script>
+
+		<script src="js/components/frontSprocket.js"></script>
+		<script src="js/components/rearSprocket.js"></script>
+		<script src="js/components/gearBox.js"></script>
+		<script src="js/components/image.js"></script>
+		<script src="js/components/nitrous.js"></script>
+		<script src="js/components/power.js"></script>
+		<script src="js/components/ratios.js"></script>
+		<script src="js/components/swingarm.js"></script>
+		<script src="js/components/tire.js"></script>
+		<script src="js/components/torque.js"></script>
+		<script src="js/components/weight.js"></script>
+		<script src="js/components/wheelBase.js"></script>
+		<script src="js/components/engine.js"></script>
+
+		<script src="js/models/baseBike.js"></script>
+
 		<script src="js/models/hdxl1200.js"></script>
 		<script src="js/models/v92sc.js"></script>
 		<script src="js/models/trophy1949.js"></script>
@@ -42,10 +60,11 @@
 		<script src="js/models/castiglioni.js"></script>
 		<script src="js/models/busa.js"></script>
 		<script src="js/models/yzf1000.js"></script>
+		
+		<script src="js/models/baseTuner.js"></script>
 
 		<script src="js/views/bikeFormFieldsView.js"></script>
 		<script src="js/views/bikeFormView.js"></script>
 
-		<script src="js/main.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>

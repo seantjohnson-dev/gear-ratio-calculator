@@ -1,10 +1,12 @@
 (function ($, win) {
-	_tc.Factory.Components.WheelBase = function (options) {
-		var obj = {
+	_tc.Factory.Components.WheelBase = Backbone.View.extend({
+		defaults: {
         name: "Wheel Base",
         value: 1418,
         unit: "mm"
-    };
-		return $.extend(true, {}, obj, options);
-	}
+    },
+		initialize: function (options) {
+			this.options = $.extend(true, {}, this.defaults, options);
+		}
+	});
 })(jQuery, window);

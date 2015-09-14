@@ -1,11 +1,14 @@
 (function ($, win) {
-	_tc.Factory.Components.RearSprocket = function (options) {
-		var obj = {
+	_tc.Factory.Components.RearSprocket = Backbone.View.extend({
+		defaults: {
 			name: "Rear Sprocket",
 			min: 35,
 			max: 55,
-			value: 48
-		};
-		return $.extend(true, {}, new _tc.Factory.Components.Sprocket(obj), options);
-	};
+			value: 48,
+			unit: "teeth"
+		},
+		initialize: function (options) {
+			this.options = $.extend(true, {}, this.defaults, options);
+		}
+	});
 })(jQuery, window);

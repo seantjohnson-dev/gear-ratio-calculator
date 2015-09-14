@@ -1,11 +1,14 @@
 (function ($, win) {
-	_tc.Factory.Components.FrontSprocket = function (options) {
-		var obj = {
+	_tc.Factory.Components.FrontSprocket = Backbone.View.extend({
+		defaults: {
 			name: "Front Sprocket",
 			min: 10,
 			max: 19,
-			value: 16
-		};
-		return $.extend(true, {}, new _tc.Factory.Components.Sprocket(obj), options);
-	};
+			value: 16,
+			unit: "teeth"
+		},
+		initialize: function (options) {
+			this.options = $.extend(true, {}, this.defaults, options);
+		}
+	});
 })(jQuery, window);

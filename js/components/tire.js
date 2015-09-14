@@ -1,29 +1,29 @@
 (function ($, win) {
-	_tc.Factory.Components.Tire = function (options) {
-		var obj = {
+  _tc.Factory.Components.Tire = Backbone.View.extend({
+    defaults: {
       name: "Tire",
-			width: {
+      width: {
         name: "Tire Width",
         value: 190,
         unit: "mm"
       },
-			ratio: {
+      ratio: {
         name: "Aspect Ratio",
         value: 50,
         unit: "%"
       },
-			rim: {
+      rim: {
         name: "Rim Size",
         value: 17,
         unit: "in"
       },
-			pressure: {
+      pressure: {
         name: "Tire Pressure",
-				min: 90,
-				max: 110,
-				value: 100,
+        min: 90,
+        max: 110,
+        value: 100,
         unit: "%"
-			},
+      },
       grip: {
         value: 922,
         unit: "newtons"
@@ -33,7 +33,9 @@
         value: 76.907177637879269121105183296189,
         unit: "in"
       }
-		};
-		return $.extend(true, {}, obj, options);
-	};
+    },
+    initialize: function (options) {
+      this.options = $.extend(true, {}, this.defaults, options);
+    }
+  });
 })(jQuery, window);

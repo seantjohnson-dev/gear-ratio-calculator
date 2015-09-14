@@ -28,5 +28,5 @@
                 swingArm: 0.00
             }
 	};
-	_tc.bikes.push(new _tc.Factory.Models.baseModel($.extend({}, _tc.Factory.Defaults.trophy1949, _tc.Factory.Defaults.trophy1949.defaults)));
+	_tc.bikes.push(new _tc.Factory.Models.BaseBike($.extend({}, _tc.Factory.Defaults.trophy1949, _tc.Factory.Defaults.trophy1949.defaults)));
 })(jQuery, window);
