@@ -1,0 +1,1209 @@
+.paint {
+	z-index: 4;
+}
+.outline {
+	z-index: 3;
+}
+.wheel1, .wheel2 {
+	z-index: 2;
+}
+.disc1, .disc2 {
+	z-index: 1;
+	/*-webkit-animation: discRotate 0.1s linear 0s infinite;
+	-moz-animation: discRotate 0.1s linear 0s infinite;
+	an*/imation: discRotate 0.1s linear 0s infinite;
+}
+.wheel1, .wheel2, .disc1, .disc2 {
+	
+}
+
+@-webkit-keyframes discRotate {
+	0% {
+		-webkit-transform: rotate3d(0,0,1,0);
+		-moz-transform: rotate3d(0,0,1,0);
+		transform: rotate3d(0,0,1,0);
+	}
+	100% {
+		-webkit-transform: rotate3d(0,0,1,-360deg);
+		-moz-transform: rotate3d(0,0,1,-360deg);
+		transform: rotate3d(0,0,1,-360deg);
+	}
+}
+
+@-moz-keyframes discRotate {
+	0% {
+		-webkit-transform: rotate3d(0,0,1,0);
+		-moz-transform: rotate3d(0,0,1,0);
+		transform: rotate3d(0,0,1,0);
+	}
+	100% {
+		-webkit-transform: rotate3d(0,0,1,360deg);
+		-moz-transform: rotate3d(0,0,1,360deg);
+		transform: rotate3d(0,0,1,360deg);
+	}
+}
+
+@-keyframes discRotate {
+	0% {
+		-webkit-transform: rotate3d(0,0,1,0);
+		-moz-transform: rotate3d(0,0,1,0);
+		transform: rotate3d(0,0,1,0);
+	}
+	100% {
+		-webkit-transform: rotate3d(0,0,1,360deg);
+		-moz-transform: rotate3d(0,0,1,360deg);
+		transform: rotate3d(0,0,1,360deg);
+	}
+}
+
+
+
+#trophy1949 {
+	width: 315px;
+	height: 177px;
+	position: relative;
+}
+#trophy1949 div {
+	background: url(../img/1949_Triumph_TR5_Trophy1.png) no-repeat left top;
+	position: absolute;
+}
+
+#trophy1949 .paint, #trophy1949 .outline {
+	width: 268px;
+	height: 151px;
+	left: 1px;
+}
+#trophy1949 .paint {
+	background-position: -2px -2px;
+}
+
+#trophy1949 .outline {
+	background-position: -2px -155px;
+}
+
+#trophy1949 .wheel1, #trophy1949 .disc1 {
+	width: 106px;
+	height: 106px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#trophy1949 .wheel1 {
+	background-position: -272px -2px;
+}
+
+#trophy1949 .disc1 {
+	background-position: -380px -2px;
+}
+
+#trophy1949 .wheel2, #trophy1949 .disc2 {
+	width: 103px;
+	height: 102px;
+	bottom: 0;
+	right: 0;
+}
+
+#trophy1949 .wheel2 {
+	background-position: -2px -308px;
+}
+
+#trophy1949 .disc2 {
+	background-position: -107px -308px;
+}
+
+
+
+
+
+
+
+
+
+#v92sc {
+	width: 355px;
+	height: 210px;
+	position: relative;
+}
+#v92sc div {
+	background: url(../img/2000_Victory_V92SC_Sport1.png) no-repeat left top;
+	position: absolute;
+}
+
+#v92sc .paint, #v92sc .outline {
+	width: 327px;
+	height: 188px;
+}
+#v92sc .paint {
+	background-position: -2px -2px;
+}
+
+#v92sc .outline {
+	background-position: -2px -192px;
+}
+
+#v92sc .wheel1, #v92sc .disc1 {
+	width: 96px;
+	height: 96px;
+  bottom: 0px;
+  left: 7px;
+}
+
+#v92sc .wheel1 {
+	background-position: -331px -2px;
+}
+
+#v92sc .disc1 {
+	background-position: -2px -382px;
+}
+
+#v92sc .wheel2, #v92sc .disc2 {
+	width: 90px;
+	height: 90px;
+	bottom: 0;
+	right: 0;
+}
+
+#v92sc .wheel2 {
+	background-position: -331px -100px;
+}
+
+#v92sc .disc2 {
+	background-position: -100px -382px;
+}
+
+
+
+
+#hdxl1200 {
+	width: 335px;
+	height: 188px;
+	position: relative;
+}
+#hdxl1200 div {
+	background: url(../img/Harley_Davidson_XL12001.png) no-repeat left top;
+	position: absolute;
+}
+
+#hdxl1200 .paint, #hdxl1200 .outline {
+	width: 306px;
+	height: 169px;
+}
+#hdxl1200 .paint {
+	background-position: -2px -2px;
+}
+
+#hdxl1200 .outline {
+	background-position: -2px -173px;
+}
+
+#hdxl1200 .wheel1, #hdxl1200 .disc1 {
+	width: 99px;
+	height: 99px;
+  bottom: 0px;
+  left: 3px;
+}
+
+#hdxl1200 .wheel1 {
+	background-position: -310px -2px;
+}
+
+#hdxl1200 .disc1 {
+	background-position: -411px -2px;
+}
+
+#hdxl1200 .wheel2, #hdxl1200 .disc2 {
+	width: 95px;
+	height: 95px;
+	bottom: 0;
+	right: 0;
+}
+
+#hdxl1200 .wheel2 {
+	background-position: -2px -344px;
+}
+
+#hdxl1200 .disc2 {
+	background-position: -99px -344px;
+}
+
+
+
+
+
+
+
+
+#ninja650 {
+	width: 313px;
+	height: 179px;
+	position: relative;
+}
+#ninja650 div {
+	background: url(../img/Kawasaki_Ninja_650R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#ninja650 .paint, #ninja650 .outline {
+	width: 290px;
+	height: 157px;
+}
+#ninja650 .paint {
+	background-position: -2px -2px;
+}
+
+#ninja650 .outline {
+	background-position: -2px -161px;
+}
+
+#ninja650 .wheel1, #ninja650 .disc1 {
+	width: 93px;
+	height: 93px;
+  bottom: 0px;
+  left: 10px;
+}
+
+#ninja650 .wheel1 {
+	background-position: -294px -2px;
+}
+
+#ninja650 .disc1 {
+	background-position: -389px -2px;
+}
+
+#ninja650 .wheel2, #ninja650 .disc2 {
+	width: 89px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+
+#ninja650 .wheel2 {
+	background-position: -2px -320px;
+}
+
+#ninja650 .disc2 {
+	background-position: -2px -411px;
+}
+
+
+
+
+
+
+#shiverGT {
+	width: 336px;
+	height: 209px;
+	position: relative;
+}
+#shiverGT div {
+	background: url(../img/Aprilia_Shiver_750GT1.png) no-repeat left top;
+	position: absolute;
+}
+
+#shiverGT .paint, #shiverGT .outline {
+	width: 313px;
+	height: 180px;
+}
+#shiverGT .paint {
+	background-position: -2px -2px;
+}
+
+#shiverGT .outline {
+	background-position: -2px -184px;
+}
+
+#shiverGT .wheel1, #shiverGT .disc1 {
+	width: 99px;
+	height: 99px;
+  bottom: 0px;
+  left: 5px;
+}
+
+#shiverGT .wheel1 {
+	background-position: -317px -2px;
+}
+
+#shiverGT .disc1 {
+	background-position: -2px -366px;
+}
+
+#shiverGT .wheel2, #shiverGT .disc2 {
+	width: 94px;
+	height: 94px;
+	bottom: 0;
+	right: 0;
+}
+
+#shiverGT .wheel2 {
+	background-position: -103px -366px;
+}
+
+#shiverGT .disc2 {
+	background-position: -199px -366px;
+}
+
+
+
+
+
+
+
+
+#thundercat {
+	width: 308px;
+	height: 174px;
+	position: relative;
+}
+#thundercat div {
+	background: url(../img/Yamaha_YZF600R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#thundercat .paint, #thundercat .outline {
+	width: 285px;
+	height: 153px;
+}
+#thundercat .paint {
+	background-position: -2px -2px;
+}
+
+#thundercat .outline {
+	background-position: -2px -157px;
+}
+
+#thundercat .wheel1, #thundercat .disc1 {
+	width: 93px;
+	height: 92px;
+  bottom: 0px;
+  left: 3px;
+}
+
+#thundercat .wheel1 {
+	background-position: -289px -2px;
+}
+
+#thundercat .disc1 {
+	background-position: -384px -2px;
+}
+
+#thundercat .wheel2, #thundercat .disc2 {
+	width: 89px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+
+#thundercat .wheel2 {
+	background-position: -2px -312px;
+}
+
+#thundercat .disc2 {
+	background-position: -2px -403px;
+}
+
+
+
+
+
+
+
+
+#mille {
+	width: 302px;
+	height: 175px;
+	position: relative;
+}
+#mille div {
+	background: url(../img/Aprilia_RSV_10001.png) no-repeat left top;
+	position: absolute;
+}
+
+#mille .paint, #mille .outline {
+	width: 285px;
+	height: 153px;
+}
+#mille .paint {
+	background-position: -2px -2px;
+}
+
+#mille .outline {
+	background-position: -2px -157px;
+}
+
+#mille .wheel1, #mille .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#mille .wheel1 {
+	background-position: -289px -2px;
+}
+
+#mille .disc1 {
+	background-position: -383px -2px;
+}
+
+#mille .wheel2, #mille .disc2 {
+	width: 88px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+
+#mille .wheel2 {
+	background-position: -2px -312px;
+}
+
+#mille .disc2 {
+	background-position: -2px -403px;
+}
+
+
+
+
+
+
+
+#boxer {
+	width: 320px;
+	height: 184px;
+	position: relative;
+}
+#boxer div {
+	background: url(../img/BMW_HP2_Sport1.png) no-repeat left top;
+	position: absolute;
+}
+
+#boxer .paint, #boxer .outline {
+	width: 303px;
+	height: 162px;
+	left: 1px;
+}
+#boxer .paint {
+	background-position: -2px -2px;
+}
+
+#boxer .outline {
+	background-position: -2px -166px;
+}
+
+#boxer .wheel1, #boxer .disc1 {
+	width: 95px;
+	height: 96px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#boxer .wheel1 {
+	background-position: -307px -2px;
+}
+
+#boxer .disc1 {
+	background-position: -404px -2px;
+}
+
+#boxer .wheel2, #boxer .disc2 {
+	width: 87px;
+	height: 87px;
+	bottom: 0;
+	right: 0;
+}
+
+#boxer .wheel2 {
+	background-position: -2px -330px;
+}
+
+#boxer .disc2 {
+	background-position: -2px -419px;
+}
+
+
+
+
+
+
+
+
+#k1200s {
+	width: 324px;
+	height: 181px;
+	position: relative;
+}
+#k1200s div {
+	background: url(../img/BMW_K1200S1.png) no-repeat left top;
+	position: absolute;
+}
+
+#k1200s .paint, #k1200s .outline {
+	width: 316px;
+	height: 157px;
+}
+#k1200s .paint {
+	background-position: -2px -2px;
+}
+
+#k1200s .outline {
+	background-position: -2px -161px;
+}
+
+#k1200s .wheel1, #k1200s .disc1 {
+	width: 90px;
+	height: 90px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#k1200s .wheel1 {
+	background-position: -320px -2px;
+}
+
+#k1200s .disc1 {
+	background-position: -412px -2px;
+}
+
+#k1200s .wheel2, #k1200s .disc2 {
+	width: 88px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+
+#k1200s .wheel2 {
+	background-position: -320px -161px;
+}
+
+#k1200s .disc2 {
+	background-position: -410px -161px;
+}
+
+
+
+
+
+
+#superBlackbird {
+	width: 320px;
+	height: 184px;
+	position: relative;
+}
+#superBlackbird div {
+	background: url(../img/Honda_CBR1100xx1.png) no-repeat left top;
+	position: absolute;
+}
+
+#superBlackbird .paint, #superBlackbird .outline {
+	width: 320px;
+	height: 163px;
+}
+#superBlackbird .paint {
+	background-position: -2px -2px;
+}
+
+#superBlackbird .outline {
+	background-position: -2px -167px;
+}
+
+#superBlackbird .wheel1, #superBlackbird .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 5px;
+}
+
+#superBlackbird .wheel1 {
+	background-position: -324px -2px;
+}
+
+#superBlackbird .disc1 {
+	background-position: -418px -2px;
+}
+
+#superBlackbird .wheel2, #superBlackbird .disc2 {
+	width: 90px;
+	height: 90px;
+	bottom: 0;
+	right: 0;
+}
+
+#superBlackbird .wheel2 {
+	background-position: -2px -332px;
+}
+
+#superBlackbird .disc2 {
+	background-position: -94px -332px;
+}
+
+
+
+
+
+
+
+#b1125 {
+	width: 303px;
+	height: 184px;
+	position: relative;
+}
+#b1125 div {
+	background: url(../img/Buell_1125R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#b1125 .paint, #b1125 .outline {
+	width: 278px;
+	height: 162px;
+	top: 0;
+	left: 4px;
+}
+#b1125 .paint {
+	background-position: -2px -2px;
+}
+
+#b1125 .outline {
+	background-position: -2px -166px;
+}
+
+#b1125 .wheel1, #b1125 .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#b1125 .wheel1 {
+	background-position: -282px -2px;
+}
+
+#b1125 .disc1 {
+	background-position: -376px -2px;
+}
+
+#b1125 .wheel2, #b1125 .disc2 {
+	width: 89px;
+	height: 88px;
+	bottom: 0;
+	right: 0;
+}
+
+#b1125 .wheel2 {
+	background-position: -2px -330px;
+}
+
+#b1125 .disc2 {
+	background-position: -2px -420px;
+}
+
+
+
+
+
+
+#tripleNine {
+	width: 314px;
+	height: 168px;
+	position: relative;
+}
+#tripleNine div {
+	background: url(../img/Ducati_999R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#tripleNine .paint, #tripleNine .outline {
+	width: 289px;
+	height: 145px;
+}
+#tripleNine .paint {
+	background-position: -2px -2px;
+}
+
+#tripleNine .outline {
+	background-position: -2px -149px;
+}
+
+#tripleNine .wheel1, #tripleNine .disc1 {
+	width: 94px;
+	height: 94px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#tripleNine .wheel1 {
+	background-position: -293px -2px;
+}
+
+#tripleNine .disc1 {
+	background-position: -389px -2px;
+}
+
+#tripleNine .wheel2, #tripleNine .disc2 {
+	width: 90px;
+	height: 91px;
+	bottom: 0;
+	right: 0;
+}
+
+#tripleNine .wheel2 {
+	background-position: -2px -296px;
+}
+
+#tripleNine .disc2 {
+	background-position: -2px -389px;
+}
+
+
+
+
+
+
+
+#slingshot {
+	width: 303px;
+	height: 171px;
+	position: relative;
+}
+#slingshot div {
+	background: url(../img/Suzuki_GSX_R7501.png) no-repeat left top;
+	position: absolute;
+}
+
+#slingshot .paint, #slingshot .outline {
+	width: 286px;
+	height: 151px;
+}
+#slingshot .paint {
+	background-position: -2px -2px;
+}
+
+#slingshot .outline {
+	background-position: -2px -155px;
+}
+
+#slingshot .wheel1, #slingshot .disc1 {
+	width: 93px;
+	height: 93px;
+  bottom: 0px;
+  left: 3px;
+}
+
+#slingshot .wheel1 {
+	background-position: -290px -2px;
+}
+
+#slingshot .disc1 {
+	background-position: -385px -2px;
+}
+
+#slingshot .wheel2, #slingshot .disc2 {
+	width: 89px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+
+#slingshot .wheel2 {
+	background-position: -2px -308px;
+}
+
+#slingshot .disc2 {
+	background-position: -2px -399px;
+}
+
+
+
+
+
+
+
+#superSlingshot {
+	width: 303px;
+	height: 171px;
+	position: relative;
+}
+#superSlingshot div {
+	background: url(../img/Suzuki_GSX_R10001.png) no-repeat left top;
+	position: absolute;
+}
+
+#superSlingshot .paint, #superSlingshot .outline {
+	width: 287px;
+	height: 150px;
+}
+#superSlingshot .paint {
+	background-position: -2px -2px;
+}
+
+#superSlingshot .outline {
+	background-position: -2px -154px;
+}
+
+#superSlingshot .wheel1, #superSlingshot .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 3px;
+}
+
+#superSlingshot .wheel1 {
+	background-position: -291px -2px;
+}
+
+#superSlingshot .disc1 {
+	background-position: -385px -2px;
+}
+
+#superSlingshot .wheel2, #superSlingshot .disc2 {
+	width: 86px;
+	height: 86px;
+	bottom: 0;
+	right: 0;
+}
+
+#superSlingshot .wheel2 {
+	background-position: -2px -306px;
+}
+
+#superSlingshot .disc2 {
+	background-position: -2px -394px;
+}
+
+
+
+
+
+
+
+#ninja1000r {
+	width: 309px;
+	height: 167px;
+	position: relative;
+}
+#ninja1000r div {
+	background: url(../img/Kawasaki_Ninja_ZX_10R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#ninja1000r .paint, #ninja1000r .outline {
+	width: 287px;
+	height: 146px;
+}
+#ninja1000r .paint {
+	background-position: -2px -2px;
+}
+
+#ninja1000r .outline {
+	background-position: -2px -149px;
+}
+
+#ninja1000r .wheel1, #ninja1000r .disc1 {
+	width: 94px;
+	height: 93px;
+  bottom: 0px;
+  left: 6px;
+}
+
+#ninja1000r .wheel1 {
+	background-position: -291px -2px;
+}
+
+#ninja1000r .disc1 {
+	background-position: -387px -2px;
+}
+
+#ninja1000r .wheel2, #ninja1000r .disc2 {
+	width: 88px;
+	height: 88px;
+	bottom: 0;
+	right: 0;
+}
+
+#ninja1000r .wheel2 {
+	background-position: -2px -296px;
+}
+
+#ninja1000r .disc2 {
+	background-position: -2px -386px;
+}
+
+
+
+
+
+
+#ninja1400 {
+	width: 322px;
+	height: 177px;
+	position: relative;
+}
+#ninja1400 div {
+	background: url(../img/Kawasaki_Ninja_ZX_141.png) no-repeat left top;
+	position: absolute;
+
+}
+
+#ninja1400 .paint, #ninja1400 .outline {
+	width: 322px;
+	height: 157px;
+}
+
+#ninja1400 .paint {
+	background-position: -2px -2px;
+}
+
+#ninja1400 .outline {
+	background-position: -2px -161px;
+}
+
+#ninja1400 .wheel1, #ninja1400 .disc1 {
+	width: 92px;
+	height: 91px;
+  bottom: 0px;
+  left: 10px;
+}
+
+#ninja1400 .wheel1 {
+	background-position: -326px -2px;
+}
+#ninja1400 .disc1 {
+	background-position: -326px -161px;
+}
+
+#ninja1400 .wheel2, #ninja1400 .disc2 {
+	width: 90px;
+	height: 90px;
+	bottom: 0;
+	right: 0;
+}
+#ninja1400 .wheel2 {
+	background-position: -420px -2px;
+}
+
+#ninja1400 .disc2 {
+	background-position: -420px -161px;
+}
+
+
+
+
+
+
+
+#f41000r {
+	width: 313px;
+	height: 167px;
+	position: relative;
+}
+#f41000r div {
+	background: url(../img/MV_Agusta_F4_1000R1.png) no-repeat left top;
+	position: absolute;
+}
+
+#f41000r .paint, #f41000r .outline {
+	width: 292px;
+	height: 150px;
+}
+
+#f41000r .paint {
+	background-position: -2px -2px;
+}
+
+#f41000r .outline {
+	background-position: -2px -154px;
+}
+
+#f41000r .wheel1, #f41000r .disc1 {
+	width: 97px;
+	height: 97px;
+  bottom: 0px;
+  left: 5px;
+}
+
+#f41000r .wheel1 {
+	background-position: -296px -2px;
+}
+#f41000r .disc1 {
+	background-position: -395px -2px;
+}
+
+#f41000r .wheel2, #f41000r .disc2 {
+	width: 89px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+#f41000r .wheel2 {
+	background-position: -2px -306px;
+}
+
+#f41000r .disc2 {
+	background-position: -2px -397px;
+}
+
+
+
+
+
+
+#castiglioni {
+	width: 299px;
+	height: 168px;
+	position: relative;
+}
+#castiglioni div {
+	background: url(../img/MV_Agusta_F4_CC1.png) no-repeat left top;
+	position: absolute;
+}
+
+#castiglioni .paint, #castiglioni .outline {
+	width: 279px;
+	height: 150px;
+}
+
+#castiglioni .paint {
+	background-position: -2px -2px;
+}
+
+#castiglioni .outline {
+	background-position: -2px -154px;
+}
+
+#castiglioni .wheel1, #castiglioni .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#castiglioni .wheel1 {
+	background-position: -283px -2px;
+}
+#castiglioni .disc1 {
+	background-position: -377px -2px;
+}
+
+#castiglioni .wheel2, #castiglioni .disc2 {
+	width: 88px;
+	height: 88px;
+	bottom: 0;
+	right: 0;
+}
+#castiglioni .wheel2 {
+	background-position: -2px -306px;
+}
+
+#castiglioni .disc2 {
+	background-position: -2px -396px;
+}
+
+
+
+
+
+#busa {
+	width: 325px;
+	height: 177px;
+	position: relative;
+}
+#busa div {
+	background: url(../img/Suzuki_Hayabusa1.png) no-repeat left top;
+	position: absolute;
+}
+
+#busa .paint, #busa .outline {
+	width: 325px;
+	height: 157px;
+}
+
+#busa .paint {
+	background-position: -2px -2px;
+}
+
+#busa .outline {
+	background-position: -2px -161px;
+}
+
+#busa .wheel1, #busa .disc1 {
+	width: 92px;
+	height: 91px;
+  bottom: 0px;
+  left: 14px;
+}
+
+#busa .wheel1 {
+	background-position: -329px -2px;
+}
+#busa .disc1 {
+	background-position: -329px -161px;
+}
+
+#busa .wheel2, #busa .disc2 {
+	width: 90px;
+	height: 89px;
+	bottom: 0;
+	right: 0;
+}
+#busa .wheel2 {
+	background-position: -2px -320px;
+}
+
+#busa .disc2 {
+	background-position: -2px -411px;
+}
+
+
+
+
+
+
+
+#yzf1000 {
+	width: 307px;
+	height: 174px;
+	position: relative;
+}
+#yzf1000 div {
+	background: url(../img/Yamaha_YZF_R11.png) no-repeat left top;
+	position: absolute;
+}
+
+#yzf1000 .paint, #yzf1000 .outline {
+	width: 284px;
+	height: 154px;
+}
+
+#yzf1000 .paint {
+	background-position: -2px -2px;
+}
+
+#yzf1000 .outline {
+	background-position: -2px -158px;
+}
+
+#yzf1000 .wheel1, #yzf1000 .disc1 {
+	width: 92px;
+	height: 92px;
+  bottom: 0px;
+  left: 3px;
+}
+
+#yzf1000 .wheel1 {
+	background-position: -288px -2px;
+}
+#yzf1000 .disc1 {
+	background-position: -382px -2px;
+}
+
+#yzf1000 .wheel2, #yzf1000 .disc2 {
+	width: 87px;
+	height: 87px;
+	bottom: 0;
+	right: 0;
+}
+#yzf1000 .wheel2 {
+	background-position: -2px -314px;
+}
+
+#yzf1000 .disc2 {
+	background-position: -2px -403px;
+}

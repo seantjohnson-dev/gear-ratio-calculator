@@ -11,17 +11,25 @@
 									<label for="nosBHP">NOS BHP</label>
 									<input class="nosBHP bikeField" type="number" name="nosBHP" placeholder="NOS BHP"/>
 								</div>
+								<div class="bikeFieldWrapper">
+									<label for="targetTime">Target Time</label>
+									<input class="targetTime bikeField" type="number" name="targetTime" placeholder="Target Time"/>
+								</div>
+								<div class="bikeFieldWrapper">
+									<label for="trackDistance">Track Distance</label>
+									<input class="trackDistance bikeField" type="radio" name="trackDistance" value="0.125"/>
+									<input class="trackDistance bikeField" type="radio" name="trackDistance" value="0.25"/>
+									<input class="trackDistance bikeField" type="radio" name="trackDistance" value="0.5"/>
+								</div>
 							</fieldset>
 						</form>
 					</div>
 					<div class="bikeModelSpecsWrapper">
-						{{#specs}}
-							<div class="bikeModelSpecWrapper">
-								<h4 class="specName">{{name}}</h4>
-								<p class="specValue">{{value}}</p>
-								<p clas="specUnit">{{unit}}</p>
+							<div class="bikeModelSpecWrapper frontSprocket">
+								<h4 class="specName">Front Sprocket</h4>
+								<p class="specValue">{{details.value}}</p>
+								<p class="specUnit">{{unit}}</p>
 							</div>
-						{{/specs}}
 					</div>
 				</div>
 			</button>

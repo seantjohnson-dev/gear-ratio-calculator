@@ -1,7 +1,6 @@
 ;(function ($, win) {
 	_tc.Factory.Defaults.ninja650 = {
 	    defaults: {
-                name: "Ninja 650",
                 primaryDrive: 2.095,
                 tireWidth: 160,
                 aspectRatio: 50,
