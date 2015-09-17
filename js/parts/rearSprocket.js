@@ -1,10 +1,12 @@
 (function ($, win) {
-	_tc.Factory.Components.WheelBase = Backbone.View.extend({
+	_tc.Factory.Parts.RearSprocket = Backbone.View.extend({
 		defaults: {
-        name: "Wheel Base",
-        value: 1418,
-        unit: "mm"
-    },
+			name: "Rear Sprocket",
+			min: 35,
+			max: 55,
+			value: 48,
+			unit: "teeth"
+		},
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);
 		}

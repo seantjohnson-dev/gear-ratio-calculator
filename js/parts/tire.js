@@ -1,5 +1,5 @@
 (function ($, win) {
-  _tc.Factory.Components.Tire = Backbone.View.extend({
+  _tc.Factory.Parts.Tire = Backbone.View.extend({
     defaults: {
       name: "Tire",
       width: {

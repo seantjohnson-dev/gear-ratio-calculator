@@ -26,7 +26,7 @@
             value: 0.07
         }
     ];
-    _tc.Factory.Components.SwingArm = Backbone.View.extend({
+    _tc.Factory.Parts.SwingArm = Backbone.View.extend({
         defaults: {
             value: 0.00,
             unit: "%"

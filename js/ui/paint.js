@@ -1,11 +1,9 @@
 (function ($, win) {
-	_tc.Factory.Components.RearSprocket = Backbone.View.extend({
+	_tc.Factory.UI.Paint = Backbone.View.extend({
 		defaults: {
-			name: "Rear Sprocket",
-			min: 35,
-			max: 55,
-			value: 48,
-			unit: "teeth"
+			src: "/img/default.jpg",
+			width: 313,
+			height: 168
 		},
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);

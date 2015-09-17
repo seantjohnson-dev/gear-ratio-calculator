@@ -1,11 +1,9 @@
 (function ($, win) {
-	_tc.Factory.Components.FrontSprocket = Backbone.View.extend({
+	_tc.Factory.Parts.Weight = Backbone.View.extend({
 		defaults: {
-			name: "Front Sprocket",
-			min: 10,
-			max: 19,
-			value: 16,
-			unit: "teeth"
+			name: "Weight",
+			value: 392,
+			unit: "lbs"
 		},
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);

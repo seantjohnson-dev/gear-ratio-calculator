@@ -1,6 +1,6 @@
 ;(function ($, win) {
-	_tc.Factory.Views.bikeFormFieldsView = _tc.Factory.Views.baseView.extend({
-		className: "bikeFormFieldsView",
+	_tc.Factory.Views.BikeFormFieldsView = _tc.Factory.Views.BaseView.extend({
+		className: "BikeFormFieldsView",
 		tagName: "div",
 		options: {
 			disabledInputClass: "disabled",
@@ -135,7 +135,7 @@
 				modelField: "gear6Ratio"
 			}
 		],
-		template: Handlebars.compile(_tc.Templates.bikeFormFieldsView),
+		template: Handlebars.compile(_tc.Templates.BikeFormFieldsView),
 		events: function () {
 			var evts = {};
 			evts["change input"] = "onFieldChange";
@@ -144,7 +144,7 @@
 			return _.extend(_tc.Factory.Views.baseView.prototype.events.apply(this, arguments), evts);
 		},
 		initialize: function (options) {
-			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
+			_tc.Factory.Views.BaseView.prototype.initialize.apply(this, arguments);
 			_tc.trigger(_tc.EventNames.ModelReCalc, this.model);
 		},
 		onFieldChange: function (e) {

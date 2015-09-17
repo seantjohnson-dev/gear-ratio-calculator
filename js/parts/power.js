@@ -1,5 +1,5 @@
 (function ($, win) {
-	_tc.Factory.Components.Power = Backbone.View.extend({
+	_tc.Factory.Parts.Power = Backbone.View.extend({
 		defaults: {
         name: "Horse Power",
         value: 64,
@@ -10,8 +10,8 @@
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);
 			this.set({
-				components: {
-					nitrous: _tc.Factory.Components.Nitrous(this.options.nitrous)
+				parts: {
+					nitrous: _tc.Factory.Parts.Nitrous(this.options.nitrous)
 				}
 			});
 		}

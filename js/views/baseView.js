@@ -1,5 +1,5 @@
 (function ($, win) {
-	_tc.Factory.Views.baseView = Backbone.View.extend({
+	_tc.Factory.Views.BaseView = Backbone.View.extend({
 		proxy: _tc.Utils.proxy,
 		options: {},
 		model: {},

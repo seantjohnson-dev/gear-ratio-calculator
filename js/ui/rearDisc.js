@@ -1,9 +1,9 @@
 (function ($, win) {
-	_tc.Factory.Components.Weight = Backbone.View.extend({
+	_tc.Factory.UI.RearDisc = Backbone.View.extend({
 		defaults: {
-			name: "Weight",
-			value: 392,
-			unit: "lbs"
+			src: "/img/default.jpg",
+			width: 313,
+			height: 168
 		},
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);

@@ -6,95 +6,313 @@
             image: new _tc.Factory.Components.Image(),
             components: {
                 ecu: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {}
+                    stock: {
+                        level: 1,
+                        name: "Stock ECU"
+                    },
+                    l1: {
+                        level: 1,
+                        name: "ECU Remapping 1",
+                        hp: 1
+                     },
+                    l2: {
+                        level: 1,
+                        name: "ECU Remapping 2",
+                        hp: 1
+                    },
+                    l3: {
+                        level: 1,
+                        name: "ECU Remapping 3",
+                        hp: 2
+                    }
                 },
                 engine: {
                     stock: {
-                        level: 1
+                        level: 1,
+                        name: "Stock Engine"
                     },
-                    sparkPlugs: {},
-                    porting: {},
+                    l1: {
+                        level: 1,
+                        name: "Performance Spark Plugs",
+                        hp: 1
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Cylinder Porting",
+                        hp: 4
+                    },
                     displacement: {
-                        l1: {},
-                        l2: {},
-                        l3: {}
+                        l1: {
+                            level: 1,
+                            name: "Displacement Increase",
+                            hp: 6,
+                            weight: 2
+                        },
+                        l2: {
+                            level: 1,
+                            name: "Displacement Increase 2",
+                            hp: 9,
+                            weight: 2
+                        },
+                        l3: {
+                            level: 1,
+                            name: "Displacement Increase 3",
+                            hp: 14,
+                            weight: 2
+                        }
                     },
                     factory: {
-                        l1: {},
-                        l2: {}
+                        l1: {
+                            level: 1,
+                            name: "Factory Motor Kit",
+                            hp: 10
+                        },
+                        l2: {
+                            level: 1,
+                            name: "Factory Motor Kit 2",
+                            hp: 17,
+                            weight: 4
+                        }
                     }
                 },
                 exhaust: {
-                    stock: {},
+                    stock: {
+                        level: 1,
+                        name: "Stock Exhaust"
+                    },
                     lightweight: {
-                        l1: {},
-                        l2: {},
-                        l3: {}
+                        l1: {
+                            level: 1,
+                            name: "Lightweight Exhaust",
+                            hp: 2,
+                            weight: 2
+                        },
+                        l2: {
+                            level: 1,
+                            name: "Upgraded Lightweight Race Exhaust",
+                            hp: 4,
+                            weight: 2
+                        },
+                        l3: {
+                            level: 2,
+                            name: "Custom Lightweight Race Exhaust",
+                            hp: 5,
+                            weight: 2
+                        }
                     },
                     performance: {
-                        l1: {},
-                        l2: {},
-                        l3: {}
+                        l1: {
+                            level: 1,
+                            name: "Slip-on Performance Exhaust",
+                            hp: 1
+                        },
+                        l2: {
+                            level: 1,
+                            name: "High Performance Race Exhaust",
+                            hp: 2
+                        },
+                        l3: {
+                            level: 2,
+                            name: "Custom Race Exhaust",
+                            hp: 4
+                        }
                     }
                 },
                 nitro: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
+                    stock: {
+                        level: 1,
+                        name: "No Nitrous"
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Nitrous Kit",
+                        hp: 8
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Nitrous Kit",
+                        hp: 12
+                    },
                     lowCapacity: {
-                        l1: {},
-                        l2: {},
-                        l3: {}
+                        l1: {
+                            level: 1,
+                            name: "Nitrous Kit Low Capacity",
+                            hp: 14
+                        },
+                        l2: {
+                            level: 1,
+                            name: "Nitrous Kit Low Capacity 2",
+                            hp: 17
+                        },
+                        l3: {
+                            level: 2,
+                            name: "Nitrous Kit Low Capacity 3",
+                            hp: 18
+                        }
                     },
                     highCapacity: {
-                        l1: {},
-                        l2: {},
-                        l3: {}
+                        l1: {
+                            level: 2,
+                            name: "Nitrous Kit High Capacity",
+                            hp: 16
+                        },
+                        l2: {
+                            level: 2,
+                            name: "Nitrous Kit High Capacity 2",
+                            hp: 18
+                        },
+                        l3: {
+                            level: 2,
+                            name: "Nitrous Kit High Capacity 3",
+                            hp: 21
+                        }
                     }
                 },
-                filter: {
-                    stock: {},
-                    l1: {},
-                    l2: {}
+                intake: {
+                    stock: {
+                        level: 1,
+                        name: "Stock Intake",
+                        hp: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Performance Air Filter",
+                        hp: 4
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Racing Intake Setup",
+                        hp: 6
+                    }
                 },
                 turbo: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {},
-                    l4: {}
+                    stock: {
+                        level: 1,
+                        name: "No Turbo",
+                        hp: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Turbo Kit",
+                        hp: 18,
+                        weight: 2
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Turbo Kit 2",
+                        hp: 26,
+                        weight: 2
+                    },
+                    l3: {
+                        level: 1,
+                        name: "Turbo Kit 3",
+                        hp: 41,
+                        weight: 4
+                    },
+                    l4: {
+                        level: 1,
+                        name: "Turbo Kit 4",
+                        hp: 36,
+                        weight: 2
+                    }
                 },
                 weight: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {}
+                    stock: {
+                        level: 1,
+                        name: "Stock Bike",
+                        weight: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Weight Reduction Kit",
+                        weight: -11
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Weight Reduction Kit 2",
+                        weight: -17
+                    },
+                    l3: {
+                        level: 1,
+                        name: "Weight Reduction Kit 3",
+                        weight: -22
+                    }
                 },
                 wheels: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {},
-                    l4: {},
-                    l5: {},
+                    stock: {
+                        level: 1,
+                        name: "Stock Wheels",
+                        weight: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Lighter Wheels",
+                        weight: -8
+                    },
+                    l2: {
+                        level: 2,
+                        name: "Ultra Lightweight Wheels",
+                        weight: -13
+                    }
+                },
+                tires: {
+                    stock: {
+                        level: 1,
+                        name: "Stock Tires",
+                        grip: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Upgraded Street Tires",
+                        grip: 0.15
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Dual-Compound Street Tires",
+                        grip: 0.20
+                    },
+                    l3: {
+                        level: 1,
+                        name: "DOT Race Tires",
+                        grip: 0.28
+                    },
+                    l4: {
+                        level: 1,
+                        name: "NON-DOT Race Tires",
+                        grip: 0.35
+                    },
+                    l5: {
+                        level: 1,
+                        name: "NON-DOT Race Slicks",
+                        grip: 0.40
+                    }
                 },
                 swingArm: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {},
-                    l4: {}
-                },
-                gearbox: {
-                    stock: {},
-                    l1: {},
-                    l2: {},
-                    l3: {},
-                    l4: {},
-                    l5: {}
+                    stock: {
+                        level: 1,
+                        name: "Stock Swingarm",
+                        wheelBase: 0
+                    },
+                    l1: {
+                        level: 1,
+                        name: "Swingarm 1",
+                        wheelBase: 0.03
+                    },
+                    l2: {
+                        level: 1,
+                        name: "Swingarm 2",
+                        wheelBase: 0.05
+                    },
+                    l3: {
+                        level: 1,
+                        name: "Swingarm 3",
+                        wheelBase: 0.06
+                    },
+                    l4: {
+                        level: 1,
+                        name: "Swingarm 4",
+                        wheelBase: 0.07
+                    }
                 }
             },
             specs: {

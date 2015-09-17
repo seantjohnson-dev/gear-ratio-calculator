@@ -17,7 +17,7 @@ $(function () {
 		return options.inverse(this);
 	});
     Backbone.history.start({pushState: true, hashChange: false});
-    var bikeFormView = new _tc.Factory.Views.bikeFormView({
+    var bikeFormView = new _tc.Factory.Views.BikeFormView({
     	el: $(".bikeFormView")
     });
 });

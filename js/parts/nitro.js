@@ -1,5 +1,5 @@
 (function ($, win) {
-	_tc.Factory.Components.Nitrous = Backbone.View.extend({
+	_tc.Factory.Parts.Nitro = Backbone.View.extend({
         defaults: {
             name: "Nitrous",
             value: 0,

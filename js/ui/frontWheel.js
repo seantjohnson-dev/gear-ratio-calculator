@@ -1,5 +1,5 @@
 (function ($, win) {
-	_tc.Factory.Components.Image = Backbone.View.extend({
+	_tc.Factory.UI.FrontWheel = Backbone.View.extend({
 		defaults: {
 			src: "/img/default.jpg",
 			width: 313,

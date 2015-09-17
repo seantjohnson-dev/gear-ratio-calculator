@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	win._tc.Views.bikeIndexView = win._tc.Views.base.extend({
+	_tc.Views.BikeIndexView = _tc.Views.BaseView.extend({
 		
 	});
 })(jQuery, window);

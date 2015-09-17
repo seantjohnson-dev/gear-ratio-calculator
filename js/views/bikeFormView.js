@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	_tc.Factory.Views.bikeFormView = _tc.Factory.Views.baseView.extend({
+	_tc.Factory.Views.BikeFormView = _tc.Factory.Views.BaseView.extend({
 		options: {
 			dependentSelector: ".bikeDependent",
 			bikeSelector: ".bikeName",
@@ -9,22 +9,22 @@
 			localStorageVarName: "customModels"
 		},
 		model: new Backbone.Model({bikeOptions: []}),
-		template: Handlebars.compile(_tc.Templates.bikeFormView),
+		template: Handlebars.compile(_tc.Templates.BikeFormView),
 		childViews: {},
 		events: function () {
 			var evts = {};
 			evts["change " + this.options.bikeSelector] = "onFieldChange";
 			evts["change " + this.options.trackSelector] = "onFieldChange";
 			evts["change " + this.options.timeSelector] = "onFieldChange";
-			return _.extend(_tc.Factory.Views.baseView.prototype.events.apply(this, arguments), evts);
+			return _.extend(_tc.Factory.Views.BaseView.prototype.events.apply(this, arguments), evts);
 		},
 		initialize: function (options) {
-			_tc.Factory.Views.baseView.prototype.initialize.apply(this, arguments);
+			_tc.Factory.Views.BaseView.prototype.initialize.apply(this, arguments);
 			var models = this.getCustomModels();
 			if (models) {
-				this.collection = new _tc.Factory.Collections.baseCollection(models);
+				this.collection = new _tc.Factory.Collections.BaseBikeCollection(models);
 			} else {
-				this.collection = new _tc.Factory.Collections.baseCollection(_tc.bikes);
+				this.collection = new _tc.Factory.Collections.BaseBikeCollection(_tc.bikes);
 			}
 			_tc.on(_tc.EventNames.FieldChanged, this.proxy(function (obj) {
 				this.saveCustomModels();

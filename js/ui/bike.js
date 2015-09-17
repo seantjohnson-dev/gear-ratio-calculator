@@ -1,10 +1,9 @@
 (function ($, win) {
-	_tc.Factory.Components.GearBox = Backbone.View.extend({
+	_tc.Factory.UI.Bike = Backbone.View.extend({
 		defaults: {
-			min: 0.4,
-			max: 5.0,
-			number: 1,
-			value: 2.438
+			src: "/img/default.jpg",
+			width: 313,
+			height: 168
 		},
 		initialize: function (options) {
 			this.options = $.extend(true, {}, this.defaults, options);

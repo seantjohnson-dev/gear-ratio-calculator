@@ -1,5 +1,5 @@
 (function ($, win) {
-	_tc.Factory.Components.Ratios = Backbone.View.extend({
+	_tc.Factory.Parts.Ratios = Backbone.View.extend({
 		defaults: {
       name: "Ratios",
       primary: {

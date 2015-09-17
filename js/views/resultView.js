@@ -1,5 +1,5 @@
 ;(function ($, win) {
-	win._tc.Views.resultView = win._tc.Views.base.extend({
+	_tc.Views.ResultView = _tc.Views.BaseView.extend({
 		
 	});
 })(jQuery, window);
